@@ -1,1 +1,1 @@
-# SAR
+Speculative Arts Research
