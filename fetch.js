@@ -1,6 +1,7 @@
 const Mastodon = require('mastodon-api');
 
 const ignores = ['102883438707628266','102860765893027028'];
+const list = process.argv[2] == 'list' ? true : false;
 // const testRoot = '102893816974487737';
 
 const M = new Mastodon({
@@ -10,7 +11,6 @@ const M = new Mastodon({
   timeout_ms: 60*1000, 
   api_url: 'https://m.speculativeartsresearch.com/api/v1/', 
 });
-
 
 
 const getChain = async (M, roots, cb)=>{
@@ -51,7 +51,11 @@ M.get('timelines/home', (err, data, res)=>{
 				}
 			}
 
-			console.log(ret);
+			if(list){
+				console.log(ret[0].length);
+			}else{
+				console.log(JSON.stringify(ret, null, '\t'));
+			}
 
 		});
 

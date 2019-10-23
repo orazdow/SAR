@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import {App} from './components/App';
-import ReactJson from 'react-json-view';
+// import Tree from 'react-tree-graph';
 
 import statuses from './sar_statuses.json';
 
@@ -26,7 +26,11 @@ class Main extends Component{
 		return(
 
 			<div id="maindiv">
-			<ReactJson src={statuses} collapsed={true} theme="monokai" />
+
+			{/*<Tree data={statuses} height={900} width={600}/>*/}
+
+			{/*<ReactJson src={statuses} collapsed={true} theme="monokai" />*/}
+
 			</div>
 
 		);
