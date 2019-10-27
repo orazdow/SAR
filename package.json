@@ -1,5 +1,5 @@
 {
-  "name": "m_interface",
+  "name": "sar_interface",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "watch": "rum public public/bundle.js -p 8000 --  --debug index.js",
     "collate": "",
     "fetch": "node fetch.js > sar_statuses.json",
+    "fetchtree": "node fetch.js tree > sar_tree.json",
     "prod": "browserify index.js -o public/bundle.js && uglifyjs public/bundle.js -o public/bundle.js"
   },
   "keywords": [],
@@ -17,9 +18,9 @@
     "mastodon-api": "^1.3.0",
     "react": "^16.2.0",
     "react-d3-library": "^1.1.8",
+    "react-d3-tree": "^1.15.3",
     "react-dom": "^16.2.0",
-    "react-json-view": "^1.19.1",
-    "react-markdown": "^4.1.0"
+    "react-json-view": "^1.19.1"
   },
   "browserify": {
     "transform": [
@@ -42,7 +43,6 @@
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
     "cssify": "^1.0.3",
-    "font-awesome": "^4.7.0",
     "rum": "^5.1.0"
   }
 }

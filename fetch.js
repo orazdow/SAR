@@ -1,8 +1,10 @@
 const Mastodon = require('mastodon-api');
 
 const ignores = ['102883438707628266','102860765893027028'];
-const list = process.argv[2] == 'list' ? true : false;
 // const testRoot = '102893816974487737';
+
+const list = process.argv[2] == 'list' ? true : false;
+const tree = process.argv[2] == 'tree' ? true : false;
 
 const M = new Mastodon({
   access_token: 'ucWy4RVspk_dd3WltM6hkCxB-t79W8a5L9E1jhG3KsA',
@@ -12,6 +14,9 @@ const M = new Mastodon({
   api_url: 'https://m.speculativeartsresearch.com/api/v1/', 
 });
 
+let topchain = [];
+let idmap = {};
+let root = null;
 
 const getChain = async (M, roots, cb)=>{
 
@@ -21,7 +26,6 @@ const getChain = async (M, roots, cb)=>{
 
 		chains.push(new Array(roots[i]));
 		let r_id = chains[i][0].id;
-
 		await M.get('statuses/'+r_id+'/context', (err, data, res)=>{
 			chains[i] = chains[i].concat(data.descendants);
 		}); 
@@ -31,6 +35,36 @@ const getChain = async (M, roots, cb)=>{
 	cb(chains);
 
 };
+
+function indexIds(topchain, dict){
+	for(let chain of topchain){
+		for(let el of chain){
+			dict[el.id] = miniNode(el);
+		}
+	}
+}
+
+function miniNode(el){
+	return {
+		name : el.id,
+		attributes : null,
+		status: el,
+		children : []
+	};
+}
+
+function connectNodes(map){
+	var keys = Object.keys(map);
+
+	for(var i =  keys.length-1; i >= 0; i--){
+		let child = map[keys[i]];
+		let parent = map[child.status.in_reply_to_id];
+		if(child && parent){
+			parent.children.push(child);
+		}
+	}
+}
+
 
 M.get('timelines/home', (err, data, res)=>{
 
@@ -49,12 +83,21 @@ M.get('timelines/home', (err, data, res)=>{
 						el.media_attachments = JSON.stringify(el.media_attachments);
 
 				}
+
+				topchain = ret;
+				indexIds(topchain, idmap);
+				connectNodes(idmap);
+				root = idmap[ret[0][0].id];
+
 			}
 
 			if(list){
-				console.log(ret[0].length);
+				console.log(topchain[0].length);
+			}
+			else if(tree){
+				 console.log(JSON.stringify(root, null, '\t'));
 			}else{
-				console.log(JSON.stringify(ret, null, '\t'));
+				 console.log(JSON.stringify(topchain, null, '\t'));
 			}
 
 		});
