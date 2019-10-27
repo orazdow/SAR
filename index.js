@@ -15,35 +15,48 @@ class Main extends Component{
 		super(props);
 		// window.statuses = statuses;
 		window.tree = sar_tree;
+		this.nodeMouseOver = this.nodeMouseOver.bind(this);
+		this.disp;
 	}
 
 	componentDidMount(){
 		
 		// document.querySelector('body').style.backgroundColor = "#333333";
 		document.querySelector('body').style.backgroundColor = "#dddddd";
+		this.disp = document.querySelector("#readContent");
 
+	}
+
+	nodeMouseOver(event){
+		let content = event.status.content;
+		// console.log(content);
+		this.disp.innerHTML = content;
 	}
 
 	render(){
 
 		return(
 
-			<div id="maindiv" style={{width: '60em', height: '150em'}}>
+			<div id="maindiv" >
 
 			{/*<ReactJson src={sar_tree} collapsed={true} theme="monokai" />*/}
 
-			<Tree data={sar_tree} orientation="vertical" zoom={0.6} translate={{x:400, y:20}}/>
-			
+
+			<div className="treeDiv" style={{width: '60em', height: '150em', float: 'left'}}>
+			<Tree data={sar_tree} orientation="vertical" zoom={0.6} translate={{x:400, y:20}} onMouseOver={this.nodeMouseOver}/>
+			</div>
+
+
+			<div className="readout" >
+			<p id="readContent"></p>
+			</div>
+
 			</div>
 
 		);
 	}
 
 }
-
-// function Main(props){
-//         return (<h2>HI</h2>);
-// }
 
 ReactDOM.render(<Main />, document.getElementById('root'));
 
