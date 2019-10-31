@@ -1,10 +1,8 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-// import {App} from './components/App';
-import ReactJson from 'react-json-view';
+// import ReactJson from 'react-json-view';
 import Tree from 'react-d3-tree';
-
 // import statuses from './sar_statuses.json';
 import sar_tree from './sar_tree.json';
 
@@ -38,49 +36,49 @@ class Main extends Component{
         this.rect.setAttributeNS(null, 'fill-opacity', '0.0');
         this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
         svg.appendChild(this.rect);
- 		document.onkeypress = (e)=>{ 
- 			if(this.selected){
- 				if(e.key == 'w'){
- 					if(this.selected.parent){
- 						this.selected = this.selected.parent;
- 					}
- 				}else{
 
- 					switch(this.selected.children.length){
-	 					case 0: 
-	 					break;
-	 					case 1: 
-		 					if(e.key == 's'){
-		 						this.selected = this.selected.children[0];
-		 					}
-	 					break;
-	 					case 2: 
-		 					if(e.key == 'a' || e.key == 's'){
-		 						this.selected = this.selected.children[0];
-		 					}
-		 					if(e.key == 'd'){
-		 						this.selected = this.selected.children[1];
-		 					}
-	 					break;
-	 					case 3: 
-		 					if(e.key == 'a'){
-		 						this.selected = this.selected.children[0];
-		 					}
-		 					if(e.key == 's'){
-		 						this.selected = this.selected.children[1];
-		 					}
-		 					if(e.key == 'd'){
-		 						this.selected = this.selected.children[2];
-		 					}
-	 					break;
-	 				}
- 				}
+		document.addEventListener('keydown',(e)=>{
+
+			if(this.selected){
+				let len = this.selected.children ? this.selected.children.length : 0;
+				switch(e.keyCode){
+					case 40 : //down
+					e.preventDefault();
+					if(len === 1){
+						this.selected = this.selected.children[0];
+					}else if(len === 2){
+						this.selected = this.selected.children[0];
+					}else if(len === 3){
+						this.selected = this.selected.children[1];
+					}
+					break;
+					case 37 : //left
+					e.preventDefault();
+					if(len === 2 || len === 3){
+						this.selected = this.selected.children[0];
+					}
+					break;
+					case 39 : //right
+					e.preventDefault();
+					if(len === 2){
+						this.selected = this.selected.children[1];
+					}else if(len === 3){
+						this.selected = this.selected.children[2];
+					}
+					break;
+					case 38 : // up
+					e.preventDefault();
+					if(this.selected.parent){
+						this.selected = this.selected.parent;
+					}
+					break;
+				}
 		        this.rect.setAttributeNS(null, 'x', this.selected.x-25);
 		        this.rect.setAttributeNS(null, 'y', this.selected.y-25);
 		        this.rect.setAttributeNS(null, 'stroke-opacity', '1.0');
 		        this.disp.innerHTML = this.selected.status.content;
- 			}
- 		}
+			}
+		}, true);
 
 	}
 
@@ -98,7 +96,7 @@ class Main extends Component{
 	}
 
 	nodeMouseClick(event){
-		//console.log(event);
+		console.log(event);
 		this.selected = event;
         this.rect.setAttributeNS(null, 'x', event.x-25);
         this.rect.setAttributeNS(null, 'y', event.y-25);
@@ -114,7 +112,7 @@ class Main extends Component{
 			{/*<ReactJson src={sar_tree} collapsed={true} theme="monokai" />*/}
 
 			<div className="treeDiv" style={{width: '60em', height: '150em', float: 'left'}}>
-			<p style={{'width':'100%', 'padding-left': '280px'}}>click to select, use wasd to navigate selection</p>
+			<p style={{'width':'100%', 'paddingLeft': '270px'}}>click to select, use arrow keys to navigate selection</p>
 			<Tree data={sar_tree} 
 			orientation="vertical" 
 			collapsible={false}
@@ -128,7 +126,7 @@ class Main extends Component{
 
 
 			<div className="readout" style={{ 'width' : '520px', 'float' : 'right'}}>
-			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'padding-left': '10px', 'font-weight':'bold', 'line-height': '1.2' }}></p>
+			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'paddingLeft': '10px', 'fontWeight':'bold', 'lineHeight': '1.2' }}></p>
 			</div>
 			</div>
 
