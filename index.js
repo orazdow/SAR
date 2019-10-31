@@ -23,8 +23,7 @@ class Main extends Component{
 		this.selected = null;
 	}
 
-	componentDidMount(){
-		
+	componentDidMount(){	
 		// document.querySelector('body').style.backgroundColor = "#333333";
 		document.querySelector('body').style.backgroundColor = "#dddddd";
 		this.disp = document.querySelector("#readContent");
@@ -39,6 +38,49 @@ class Main extends Component{
         this.rect.setAttributeNS(null, 'fill-opacity', '0.0');
         this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
         svg.appendChild(this.rect);
+ 		document.onkeypress = (e)=>{ 
+ 			if(this.selected){
+ 				if(e.key == 'w'){
+ 					if(this.selected.parent){
+ 						this.selected = this.selected.parent;
+ 					}
+ 				}else{
+
+ 					switch(this.selected.children.length){
+	 					case 0: 
+	 					break;
+	 					case 1: 
+		 					if(e.key == 's'){
+		 						this.selected = this.selected.children[0];
+		 					}
+	 					break;
+	 					case 2: 
+		 					if(e.key == 'a' || e.key == 's'){
+		 						this.selected = this.selected.children[0];
+		 					}
+		 					if(e.key == 'd'){
+		 						this.selected = this.selected.children[1];
+		 					}
+	 					break;
+	 					case 3: 
+		 					if(e.key == 'a'){
+		 						this.selected = this.selected.children[0];
+		 					}
+		 					if(e.key == 's'){
+		 						this.selected = this.selected.children[1];
+		 					}
+		 					if(e.key == 'd'){
+		 						this.selected = this.selected.children[2];
+		 					}
+	 					break;
+	 				}
+ 				}
+		        this.rect.setAttributeNS(null, 'x', this.selected.x-25);
+		        this.rect.setAttributeNS(null, 'y', this.selected.y-25);
+		        this.rect.setAttributeNS(null, 'stroke-opacity', '1.0');
+		        this.disp.innerHTML = this.selected.status.content;
+ 			}
+ 		}
 
 	}
 
@@ -50,9 +92,7 @@ class Main extends Component{
 	}
 
 	nodeMouseOut(event){
-		if(!this.selected){
-
-		}else{
+		if(this.selected){
 			this.disp.innerHTML = this.selected.status.content;
 		}
 	}
@@ -73,13 +113,13 @@ class Main extends Component{
 
 			{/*<ReactJson src={sar_tree} collapsed={true} theme="monokai" />*/}
 
-
 			<div className="treeDiv" style={{width: '60em', height: '150em', float: 'left'}}>
+			<p style={{'width':'100%', 'padding-left': '280px'}}>click to select, use wasd to navigate selection</p>
 			<Tree data={sar_tree} 
 			orientation="vertical" 
 			collapsible={false}
 			zoom={0.6} 
-			translate={{x:400, y:20}} 
+			translate={{x:400, y:15}} 
 			onMouseOver={this.nodeMouseOver}
 			onMouseOut={this.nodeMouseOut}
 			onClick={this.nodeMouseClick}
@@ -87,8 +127,8 @@ class Main extends Component{
 			</div>
 
 
-			<div className="readout" style={{ 'width' : '520px', 'float' : 'right' }}>
-			<p id="readContent" style={{'width':'100%'}}></p>
+			<div className="readout" style={{ 'width' : '520px', 'float' : 'right'}}>
+			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'padding-left': '10px', 'font-weight':'bold', 'line-height': '1.2' }}></p>
 			</div>
 			</div>
 
