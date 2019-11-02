@@ -65,6 +65,18 @@ function connectNodes(map){
 	}
 }
 
+function dateStr(datestr){
+
+    let dt = new Date(datestr);
+    let str = dt.getUTCMonth()+1+'/'+dt.getDate()+'/'+'19'+' '+d(dt.getUTCHours(), dt.getMinutes());
+
+    function d(h, m){
+      return (h == 0 ? '12:'+m+'am' : h-12 < 0 ? h+':'+m+'am' : h-12 == 0 ? '12:'+m+'pm' : h-12+':'+m+'pm')+" gmt";
+    }
+
+    return str;
+}
+
 
 M.get('timelines/home', (err, data, res)=>{
 
@@ -79,8 +91,7 @@ M.get('timelines/home', (err, data, res)=>{
 				for(let el of chain){
 
 					el.has_media = el.media_attachments[0] ? true : false;
-					if(el.has_media)
-						el.media_attachments = JSON.stringify(el.media_attachments);
+					el.datestr = dateStr(el.created_at);
 
 				}
 

@@ -7,6 +7,10 @@ import Tree from 'react-d3-tree';
 import sar_tree from './sar_tree.json';
 
 
+function label(status){
+	return "author: "+status.account.username+"\ntime: "+status.datestr+"\nid: "+status.id;
+}
+
 class Main extends Component{
 
 	constructor(props){
@@ -24,22 +28,28 @@ class Main extends Component{
 		this.nodeMouseClick = this.nodeMouseClick.bind(this);
 		this.nodeMouseOut = this.nodeMouseOut.bind(this);
 		this.disp;
+		this.idlabel;
+		this.linklabel;
+		this.img;
 		this.rect;
 		this.selected = null;
 	}
 
 	componentDidMount(){	
 		// document.querySelector('body').style.backgroundColor = "#333333";
-		document.querySelector('body').style.backgroundColor = "#dddddd";
+		document.querySelector('body').style.backgroundColor = "#dedcd5";
 		this.disp = document.querySelector("#readContent");
+		this.idlabel = document.querySelector("#idlabel");
+		this.linklabel = document.querySelector("#linklabel");
+		this.img = document.querySelector("#t_image")
 		let svg = document.querySelector(".rd3t-tree-container svg g");
         this.rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         this.rect.setAttributeNS(null, 'x', -25);
         this.rect.setAttributeNS(null, 'y', -25);
         this.rect.setAttributeNS(null, 'height', '50');
         this.rect.setAttributeNS(null, 'width', '50');
-        this.rect.setAttributeNS(null, 'fill', '#FF3333');
-        this.rect.setAttributeNS(null, 'stroke', '#FF3333');
+        this.rect.setAttributeNS(null, 'fill', '#FF0000');
+        this.rect.setAttributeNS(null, 'stroke', '#FF0000');
         this.rect.setAttributeNS(null, 'fill-opacity', '0.0');
         this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
         svg.appendChild(this.rect);
@@ -82,23 +92,31 @@ class Main extends Component{
 				}
 		        this.rect.setAttributeNS(null, 'x', this.selected.x-25);
 		        this.rect.setAttributeNS(null, 'y', this.selected.y-25);
-		        this.rect.setAttributeNS(null, 'stroke-opacity', '1.0');
+		        this.rect.setAttributeNS(null, 'stroke-opacity', '1');
 		        this.disp.innerHTML = this.selected.status.content;
+        		this.idlabel.innerHTML = label(this.selected.status);
+				this.linklabel.href = this.selected.status.url;
+				this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
+
 			}
 		}, true);
 
 	}
 
 	nodeMouseOver(event){
-		let content = event.status.content;
-		// console.log(content);
-		this.disp.innerHTML = content;
-
+		this.disp.innerHTML = event.status.content;
+		this.idlabel.innerHTML = label(event.status);
+		this.linklabel.href = event.status.url;
+		this.linklabel.innerHTML = "link";
+    	this.img.src = event.status.has_media ? event.status.media_attachments[0].url : "";
 	}
 
 	nodeMouseOut(event){
 		if(this.selected){
 			this.disp.innerHTML = this.selected.status.content;
+			this.idlabel.innerHTML = label(this.selected.status);
+			this.linklabel.href = this.selected.status.url;
+	    	this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
 		}
 	}
 
@@ -107,7 +125,9 @@ class Main extends Component{
 		this.selected = event;
         this.rect.setAttributeNS(null, 'x', event.x-25);
         this.rect.setAttributeNS(null, 'y', event.y-25);
-        this.rect.setAttributeNS(null, 'stroke-opacity', '1.0');
+        this.rect.setAttributeNS(null, 'stroke-opacity', '1');
+    	this.img.src = event.status.has_media ? event.status.media_attachments[0].url : "";
+        
 	}
 
 	render(){
@@ -123,8 +143,8 @@ class Main extends Component{
 			<Tree data={sar_tree} 
 			orientation="vertical" 
 			collapsible={false}
-			zoom={0.6} 
-			translate={{x:400, y:15}} 
+			zoom={0.5} 
+			translate={{x:350, y:15}} 
 			onMouseOver={this.nodeMouseOver}
 			onMouseOut={this.nodeMouseOut}
 			onClick={this.nodeMouseClick}
@@ -133,7 +153,10 @@ class Main extends Component{
 
 
 			<div className="readout" style={{ 'width' : '520px', 'float' : 'right'}}>
-			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'paddingLeft': '10px', 'fontWeight':'bold', 'lineHeight': '1.2' }}></p>
+			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'paddingLeft': '10px', 'fontWeight':'bold', 'lineHeight': '1.3'}}></p>
+			<pre id="idlabel" style={{'padding': '5px', 'paddingLeft': '10px', 'margin' : '0px'}}></pre>
+			<a id="linklabel" target="_blank" href="#" style={{'padding': '5px', 'paddingLeft': '10px'}}></a>
+			<img id="t_image" src="" style={{'maxWidth': '650px', 'height':'auto', 'padding' : '10px'}}></img>
 			</div>
 			</div>
 
