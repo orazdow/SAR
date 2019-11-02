@@ -13,6 +13,13 @@ class Main extends Component{
 		super(props);
 		// window.statuses = statuses;
 		window.tree = sar_tree;
+		window.dfs = (node, int)=>{
+			let i = int;
+			for(let n of node.children){
+				i += dfs(n, int);
+			}
+			return i;
+		}
 		this.nodeMouseOver = this.nodeMouseOver.bind(this);
 		this.nodeMouseClick = this.nodeMouseClick.bind(this);
 		this.nodeMouseOut = this.nodeMouseOut.bind(this);

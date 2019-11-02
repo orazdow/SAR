@@ -6,7 +6,6 @@
   "scripts": {
     "build": "browserify --debug index.js -o public/bundle.js",
     "watch": "rum public public/bundle.js -p 8000 --  --debug index.js",
-    "collate": "",
     "fetch": "node fetch.js > sar_statuses.json",
     "fetchtree": "node fetch.js tree > sar_tree.json",
     "prod": "browserify index.js -o public/bundle.js && uglifyjs public/bundle.js -o public/bundle.js"
