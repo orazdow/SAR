@@ -39,12 +39,37 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
-			"media_attachments": "[{\"id\":\"17\",\"type\":\"image\",\"url\":\"https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/017/original/d1d7435e71e457d6.png\",\"preview_url\":\"https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/017/small/d1d7435e71e457d6.png\",\"remote_url\":null,\"text_url\":\"https://m.speculativeartsresearch.com/media/u17GhaIv3tht8oDB38A\",\"meta\":{\"original\":{\"width\":960,\"height\":1280,\"size\":\"960x1280\",\"aspect\":0.75},\"small\":{\"width\":346,\"height\":461,\"size\":\"346x461\",\"aspect\":0.7505422993492408}},\"description\":null,\"blurhash\":\"UNNTj:Dir?V@~qogWBj]n4t7ozbGxuRjj[of\"}]",
+			"media_attachments": [
+				{
+					"id": "17",
+					"type": "image",
+					"url": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/017/original/d1d7435e71e457d6.png",
+					"preview_url": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/017/small/d1d7435e71e457d6.png",
+					"remote_url": null,
+					"text_url": "https://m.speculativeartsresearch.com/media/u17GhaIv3tht8oDB38A",
+					"meta": {
+						"original": {
+							"width": 960,
+							"height": 1280,
+							"size": "960x1280",
+							"aspect": 0.75
+						},
+						"small": {
+							"width": 346,
+							"height": 461,
+							"size": "346x461",
+							"aspect": 0.7505422993492408
+						}
+					},
+					"description": null,
+					"blurhash": "UNNTj:Dir?V@~qogWBj]n4t7ozbGxuRjj[of"
+				}
+			],
 			"mentions": [
 				{
 					"id": "36",
@@ -57,7 +82,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": true
+			"has_media": true,
+			"datestr": "10/2/19 4:50pm gmt"
 		},
 		{
 			"id": "102895079334101826",
@@ -98,8 +124,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -132,7 +158,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/2/19 10:11pm gmt"
 		},
 		{
 			"id": "102898803139523313",
@@ -173,12 +200,37 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
-			"media_attachments": "[{\"id\":\"42\",\"type\":\"image\",\"url\":\"https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/042/original/ae595ea24de47892.png\",\"preview_url\":\"https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/042/small/ae595ea24de47892.png\",\"remote_url\":null,\"text_url\":\"https://m.speculativeartsresearch.com/media/_KGgjrNaQetxrwTJqxY\",\"meta\":{\"original\":{\"width\":960,\"height\":1280,\"size\":\"960x1280\",\"aspect\":0.75},\"small\":{\"width\":346,\"height\":461,\"size\":\"346x461\",\"aspect\":0.7505422993492408}},\"description\":null,\"blurhash\":\"UHNdBs~qo|tR_3ofozWBS0kBRjfQtQayfRay\"}]",
+			"media_attachments": [
+				{
+					"id": "42",
+					"type": "image",
+					"url": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/042/original/ae595ea24de47892.png",
+					"preview_url": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/042/small/ae595ea24de47892.png",
+					"remote_url": null,
+					"text_url": "https://m.speculativeartsresearch.com/media/_KGgjrNaQetxrwTJqxY",
+					"meta": {
+						"original": {
+							"width": 960,
+							"height": 1280,
+							"size": "960x1280",
+							"aspect": 0.75
+						},
+						"small": {
+							"width": 346,
+							"height": 461,
+							"size": "346x461",
+							"aspect": 0.7505422993492408
+						}
+					},
+					"description": null,
+					"blurhash": "UHNdBs~qo|tR_3ofozWBS0kBRjfQtQayfRay"
+				}
+			],
 			"mentions": [
 				{
 					"id": "36",
@@ -191,7 +243,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": true
+			"has_media": true,
+			"datestr": "10/3/19 1:58pm gmt"
 		},
 		{
 			"id": "102906013889183488",
@@ -232,8 +285,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -266,7 +319,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/4/19 8:32pm gmt"
 		},
 		{
 			"id": "102907645734604763",
@@ -307,8 +361,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -325,7 +379,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/4/19 3:27am gmt"
 		},
 		{
 			"id": "102908467773668261",
@@ -366,8 +421,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -400,7 +455,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/4/19 6:56am gmt"
 		},
 		{
 			"id": "102913240916260642",
@@ -441,8 +497,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -459,7 +515,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/5/19 3:10am gmt"
 		},
 		{
 			"id": "102917432913807305",
@@ -500,8 +557,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -534,7 +591,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/6/19 8:56pm gmt"
 		},
 		{
 			"id": "102919268064828111",
@@ -575,8 +633,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -593,7 +651,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/6/19 4:43am gmt"
 		},
 		{
 			"id": "102931868759255976",
@@ -634,8 +693,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -668,7 +727,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 10:7am gmt"
 		},
 		{
 			"id": "102931871447073930",
@@ -709,8 +769,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -743,7 +803,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 10:8am gmt"
 		},
 		{
 			"id": "102932811682375815",
@@ -784,8 +845,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -802,7 +863,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 2:7pm gmt"
 		},
 		{
 			"id": "102933724088664696",
@@ -843,8 +905,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -877,7 +939,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 5:59pm gmt"
 		},
 		{
 			"id": "102941485837219374",
@@ -918,8 +981,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -936,7 +999,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/10/19 2:53am gmt"
 		},
 		{
 			"id": "102960664170374827",
@@ -977,8 +1041,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1011,7 +1075,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/14/19 12:10pm gmt"
 		},
 		{
 			"id": "102960957556505591",
@@ -1052,8 +1117,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -1070,7 +1135,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/14/19 1:25pm gmt"
 		},
 		{
 			"id": "102972820601132554",
@@ -1111,8 +1177,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1145,7 +1211,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/16/19 3:42pm gmt"
 		},
 		{
 			"id": "102975540639334503",
@@ -1186,8 +1253,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -1204,7 +1271,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/16/19 3:14am gmt"
 		},
 		{
 			"id": "102984989268865315",
@@ -1245,8 +1313,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1279,7 +1347,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/18/19 7:17pm gmt"
 		},
 		{
 			"id": "102986420961879174",
@@ -1320,8 +1389,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -1338,7 +1407,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/18/19 1:21am gmt"
 		},
 		{
 			"id": "102990920223358078",
@@ -1379,8 +1449,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1413,7 +1483,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/19/19 8:25pm gmt"
 		},
 		{
 			"id": "102995056898301230",
@@ -1454,8 +1525,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -1472,7 +1543,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/20/19 1:57pm gmt"
 		},
 		{
 			"id": "103001530589160642",
@@ -1510,8 +1582,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1544,7 +1616,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 5:23pm gmt"
 		},
 		{
 			"id": "103001758084293458",
@@ -1585,8 +1658,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -1603,7 +1676,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 6:21pm gmt"
 		},
 		{
 			"id": "102906085914262986",
@@ -1644,8 +1718,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1678,7 +1752,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/4/19 8:50pm gmt"
 		},
 		{
 			"id": "102907668954358689",
@@ -1719,8 +1794,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -1737,7 +1812,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/4/19 3:33am gmt"
 		},
 		{
 			"id": "102908518596782793",
@@ -1778,8 +1854,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1812,7 +1888,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/5/19 7:9am gmt"
 		},
 		{
 			"id": "102897191979296781",
@@ -1853,8 +1930,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -1887,7 +1964,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/3/19 7:9am gmt"
 		},
 		{
 			"id": "102901792511955041",
@@ -1928,8 +2006,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -1946,7 +2024,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/3/19 2:39am gmt"
 		},
 		{
 			"id": "102905877557164603",
@@ -1987,8 +2066,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -2021,7 +2100,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/4/19 7:57pm gmt"
 		},
 		{
 			"id": "102907597468202336",
@@ -2062,8 +2142,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2080,7 +2160,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/4/19 3:15am gmt"
 		},
 		{
 			"id": "102917487033570524",
@@ -2121,8 +2202,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -2155,7 +2236,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/6/19 9:10pm gmt"
 		},
 		{
 			"id": "102919210212502893",
@@ -2196,8 +2278,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2214,7 +2296,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/6/19 4:28am gmt"
 		},
 		{
 			"id": "102926948157376627",
@@ -2255,8 +2338,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2273,7 +2356,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/8/19 1:16pm gmt"
 		},
 		{
 			"id": "103001575469630964",
@@ -2311,8 +2395,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -2345,7 +2429,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 5:35pm gmt"
 		},
 		{
 			"id": "103001842426821976",
@@ -2386,8 +2471,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2404,7 +2489,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 6:43pm gmt"
 		},
 		{
 			"id": "102931772641792800",
@@ -2445,8 +2531,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -2479,7 +2565,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 9:43am gmt"
 		},
 		{
 			"id": "102932748928670246",
@@ -2520,8 +2607,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2538,7 +2625,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 1:51pm gmt"
 		},
 		{
 			"id": "102933654586866315",
@@ -2579,8 +2667,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -2613,7 +2701,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 5:42pm gmt"
 		},
 		{
 			"id": "102941435719149022",
@@ -2654,8 +2743,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2672,7 +2761,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/10/19 2:40am gmt"
 		},
 		{
 			"id": "102986487516224099",
@@ -2713,8 +2803,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2731,7 +2821,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/18/19 1:38am gmt"
 		},
 		{
 			"id": "102990892349962242",
@@ -2772,8 +2863,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -2806,7 +2897,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/19/19 8:18pm gmt"
 		},
 		{
 			"id": "102994982664327001",
@@ -2847,8 +2939,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2865,7 +2957,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/20/19 1:38pm gmt"
 		},
 		{
 			"id": "103001611300268191",
@@ -2903,8 +2996,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -2937,7 +3030,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 5:44pm gmt"
 		},
 		{
 			"id": "103001951217432716",
@@ -2950,7 +3044,7 @@
 			"language": "en",
 			"uri": "https://m.speculativeartsresearch.com/users/max/statuses/103001951217432716",
 			"url": "https://m.speculativeartsresearch.com/@max/103001951217432716",
-			"replies_count": 1,
+			"replies_count": 2,
 			"reblogs_count": 0,
 			"favourites_count": 0,
 			"favourited": false,
@@ -2978,8 +3072,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -2996,7 +3090,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 7:10pm gmt"
 		},
 		{
 			"id": "103002622786388245",
@@ -3037,8 +3132,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3071,7 +3166,201 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 10:1pm gmt"
+		},
+		{
+			"id": "103062979873769386",
+			"created_at": "2019-11-01T13:51:10.232Z",
+			"in_reply_to_id": "103001951217432716",
+			"in_reply_to_account_id": "36",
+			"sensitive": false,
+			"spoiler_text": "",
+			"visibility": "public",
+			"language": "en",
+			"uri": "https://m.speculativeartsresearch.com/users/max/statuses/103062979873769386",
+			"url": "https://m.speculativeartsresearch.com/@max/103062979873769386",
+			"replies_count": 1,
+			"reblogs_count": 0,
+			"favourites_count": 0,
+			"favourited": false,
+			"reblogged": false,
+			"muted": false,
+			"content": "<p><span class=\"h-card\"><a href=\"https://m.speculativeartsresearch.com/@z\" class=\"u-url mention\">@<span>z</span></a></span> drive schema.  A time when the whirring of actuators was interpreted musically by wet brain daemons echoed.</p><p>Lu grimaced and watched Ebayxes passively enter the upwelling lower /Nous/. She wished the Cartesian Clone was there, to receive Lu’s subjectivity &amp; reassert shared reality metrics.  But, C.C. was inarticulate in the Alt. When her bindings became esthetic waste bits she was not pleased. Then she was overtaken.</p><p>“Humans!” Lu gasped when she re-emerged in /Nous-13/. Dark, shuffling cyb-</p>",
+			"reblog": null,
+			"application": {
+				"name": "Tootle for Mastodon",
+				"website": null
+			},
+			"account": {
+				"id": "1",
+				"username": "max",
+				"acct": "max",
+				"display_name": "Max Razdow",
+				"locked": false,
+				"bot": false,
+				"created_at": "2019-09-26T20:44:32.478Z",
+				"note": "<p>“We are speaking of a man of the clockwash, a former student at Andervox and the shale.  Who knows how his corporeal aspect runs through time in our land.  Perhaps he was cursed to decompose a score of years in a day by some charlatan monk of his land.”</p><p>Artist / Editor of Speculative Arts Research / Admin of this place</p>",
+				"url": "https://m.speculativeartsresearch.com/@max",
+				"avatar": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/001/original/908b64bc31baae28.jpg",
+				"avatar_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/001/original/908b64bc31baae28.jpg",
+				"header": "https://m.speculativeartsresearch.com/headers/original/missing.png",
+				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
+				"followers_count": 13,
+				"following_count": 0,
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
+				"emojis": [],
+				"fields": []
+			},
+			"media_attachments": [],
+			"mentions": [
+				{
+					"id": "36",
+					"username": "z",
+					"url": "https://m.speculativeartsresearch.com/@z",
+					"acct": "z"
+				}
+			],
+			"tags": [],
+			"emojis": [],
+			"card": null,
+			"poll": null,
+			"has_media": false,
+			"datestr": "11/1/19 1:51pm gmt"
+		},
+		{
+			"id": "103068535485579716",
+			"created_at": "2019-11-02T13:24:02.084Z",
+			"in_reply_to_id": "103062979873769386",
+			"in_reply_to_account_id": "1",
+			"sensitive": false,
+			"spoiler_text": "",
+			"visibility": "public",
+			"language": "en",
+			"uri": "https://m.speculativeartsresearch.com/users/z/statuses/103068535485579716",
+			"url": "https://m.speculativeartsresearch.com/@z/103068535485579716",
+			"replies_count": 1,
+			"reblogs_count": 0,
+			"favourites_count": 0,
+			"favourited": false,
+			"reblogged": false,
+			"muted": false,
+			"content": "<p><span class=\"h-card\"><a href=\"https://m.speculativeartsresearch.com/@max\" class=\"u-url mention\">@<span>max</span></a></span> erian accounting orthodoxy, slowly moving trinkets from pocket to pocket. </p><p>A grey-faced man pulled a gyroscope toy from an inside vest pocket, moved it to his trowsers, then three steps, then placed it in a bespectacled, large-nosed woman&apos;s shirt pocket as they passed. No one looked at the trinkets lest they collapse their grand quantum computation.</p><p>She was unnoticed, the crowd flowing around her. She plucked a</p>",
+			"reblog": null,
+			"application": null,
+			"account": {
+				"id": "36",
+				"username": "z",
+				"acct": "z",
+				"display_name": "Jamie Zigelbaum",
+				"locked": false,
+				"bot": false,
+				"created_at": "2019-10-02T07:57:15.977Z",
+				"note": "<p>awareness, entity, human, friend, husband, artist, designer, writer, inventor, engineer, coach, entrepreneur, unknown</p>",
+				"url": "https://m.speculativeartsresearch.com/@z",
+				"avatar": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/036/original/720cb10cd88cbe43.png",
+				"avatar_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/036/original/720cb10cd88cbe43.png",
+				"header": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
+				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
+				"followers_count": 4,
+				"following_count": 2,
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
+				"emojis": [],
+				"fields": [
+					{
+						"name": "portfolio",
+						"value": "<a href=\"http://jamiezigelbaum.com\" rel=\"me nofollow noopener\" target=\"_blank\"><span class=\"invisible\">http://</span><span class=\"\">jamiezigelbaum.com</span><span class=\"invisible\"></span></a>",
+						"verified_at": null
+					},
+					{
+						"name": "company",
+						"value": "<a href=\"http://midnightcommercial.com\" rel=\"me nofollow noopener\" target=\"_blank\"><span class=\"invisible\">http://</span><span class=\"\">midnightcommercial.com</span><span class=\"invisible\"></span></a>",
+						"verified_at": null
+					},
+					{
+						"name": "location",
+						"value": "Barcelona",
+						"verified_at": null
+					}
+				]
+			},
+			"media_attachments": [],
+			"mentions": [
+				{
+					"id": "1",
+					"username": "max",
+					"url": "https://m.speculativeartsresearch.com/@max",
+					"acct": "max"
+				}
+			],
+			"tags": [],
+			"emojis": [],
+			"card": null,
+			"poll": null,
+			"has_media": false,
+			"datestr": "11/2/19 1:24pm gmt"
+		},
+		{
+			"id": "103069112377855431",
+			"created_at": "2019-11-02T15:50:44.824Z",
+			"in_reply_to_id": "103068535485579716",
+			"in_reply_to_account_id": "36",
+			"sensitive": false,
+			"spoiler_text": "",
+			"visibility": "public",
+			"language": "en",
+			"uri": "https://m.speculativeartsresearch.com/users/max/statuses/103069112377855431",
+			"url": "https://m.speculativeartsresearch.com/@max/103069112377855431",
+			"replies_count": 0,
+			"reblogs_count": 0,
+			"favourites_count": 0,
+			"favourited": false,
+			"reblogged": false,
+			"muted": false,
+			"content": "<p><span class=\"h-card\"><a href=\"https://m.speculativeartsresearch.com/@z\" class=\"u-url mention\">@<span>z</span></a></span> cross field sensor wisk from her collar to suss the impact of this locus.</p><p>“My gaud,” Lu denoted, fanning the wisk wider.  This place was deeply entrained to the meta field axis.  Whatever these cyb-erians were accounting with their trinket-based quantum swaps was deeply, deeply embedded in +Numinaphysical construct.<br />Himroy had postulated such things, but Lu never guessed it to be observable in any time scale she could access.  Now Ted’s errant spelunking made sense.</p><p>“I wonder,” Lu wondered,</p>",
+			"reblog": null,
+			"application": {
+				"name": "Tootle for Mastodon",
+				"website": null
+			},
+			"account": {
+				"id": "1",
+				"username": "max",
+				"acct": "max",
+				"display_name": "Max Razdow",
+				"locked": false,
+				"bot": false,
+				"created_at": "2019-09-26T20:44:32.478Z",
+				"note": "<p>“We are speaking of a man of the clockwash, a former student at Andervox and the shale.  Who knows how his corporeal aspect runs through time in our land.  Perhaps he was cursed to decompose a score of years in a day by some charlatan monk of his land.”</p><p>Artist / Editor of Speculative Arts Research / Admin of this place</p>",
+				"url": "https://m.speculativeartsresearch.com/@max",
+				"avatar": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/001/original/908b64bc31baae28.jpg",
+				"avatar_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/001/original/908b64bc31baae28.jpg",
+				"header": "https://m.speculativeartsresearch.com/headers/original/missing.png",
+				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
+				"followers_count": 13,
+				"following_count": 0,
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
+				"emojis": [],
+				"fields": []
+			},
+			"media_attachments": [],
+			"mentions": [
+				{
+					"id": "36",
+					"username": "z",
+					"url": "https://m.speculativeartsresearch.com/@z",
+					"acct": "z"
+				}
+			],
+			"tags": [],
+			"emojis": [],
+			"card": null,
+			"poll": null,
+			"has_media": false,
+			"datestr": "11/2/19 3:50pm gmt"
 		},
 		{
 			"id": "102917528741243096",
@@ -3112,8 +3401,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3146,7 +3435,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/6/19 9:21pm gmt"
 		},
 		{
 			"id": "102919123265976208",
@@ -3187,8 +3477,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -3205,7 +3495,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/6/19 4:6am gmt"
 		},
 		{
 			"id": "102933572288443864",
@@ -3246,8 +3537,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3280,7 +3571,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/9/19 5:21pm gmt"
 		},
 		{
 			"id": "102939975334560649",
@@ -3321,8 +3613,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -3339,7 +3631,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/10/19 8:29pm gmt"
 		},
 		{
 			"id": "103001633631846480",
@@ -3377,8 +3670,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3411,7 +3704,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 5:50pm gmt"
 		},
 		{
 			"id": "103001914450282622",
@@ -3452,8 +3746,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -3470,7 +3764,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/21/19 7:1pm gmt"
 		},
 		{
 			"id": "102932193224569870",
@@ -3511,8 +3806,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3532,7 +3827,32 @@
 					}
 				]
 			},
-			"media_attachments": "[{\"id\":\"78\",\"type\":\"image\",\"url\":\"https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/078/original/f3b01c6a1c958e15.jpg\",\"preview_url\":\"https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/078/small/f3b01c6a1c958e15.jpg\",\"remote_url\":null,\"text_url\":\"https://m.speculativeartsresearch.com/media/DYtnGXU5j2x4emCYUtk\",\"meta\":{\"original\":{\"width\":1109,\"height\":1478,\"size\":\"1109x1478\",\"aspect\":0.7503382949932341},\"small\":{\"width\":346,\"height\":461,\"size\":\"346x461\",\"aspect\":0.7505422993492408}},\"description\":null,\"blurhash\":\"UCD,4NMv~Vxu~qIAxtxt?baeae%LMzoMRjRm\"}]",
+			"media_attachments": [
+				{
+					"id": "78",
+					"type": "image",
+					"url": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/078/original/f3b01c6a1c958e15.jpg",
+					"preview_url": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/media_attachments/files/000/000/078/small/f3b01c6a1c958e15.jpg",
+					"remote_url": null,
+					"text_url": "https://m.speculativeartsresearch.com/media/DYtnGXU5j2x4emCYUtk",
+					"meta": {
+						"original": {
+							"width": 1109,
+							"height": 1478,
+							"size": "1109x1478",
+							"aspect": 0.7503382949932341
+						},
+						"small": {
+							"width": 346,
+							"height": 461,
+							"size": "346x461",
+							"aspect": 0.7505422993492408
+						}
+					},
+					"description": null,
+					"blurhash": "UCD,4NMv~Vxu~qIAxtxt?baeae%LMzoMRjRm"
+				}
+			],
 			"mentions": [
 				{
 					"id": "1",
@@ -3545,7 +3865,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": true
+			"has_media": true,
+			"datestr": "10/9/19 11:30am gmt"
 		},
 		{
 			"id": "102952701144211971",
@@ -3586,8 +3907,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -3604,7 +3925,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/12/19 2:25am gmt"
 		},
 		{
 			"id": "102960641676936063",
@@ -3645,8 +3967,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3679,7 +4001,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/14/19 12:5pm gmt"
 		},
 		{
 			"id": "102961030683965445",
@@ -3720,8 +4043,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -3738,7 +4061,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/14/19 1:44pm gmt"
 		},
 		{
 			"id": "102972781288420939",
@@ -3779,8 +4103,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3813,7 +4137,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/16/19 3:32pm gmt"
 		},
 		{
 			"id": "102975469624898053",
@@ -3854,8 +4179,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -3872,7 +4197,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/16/19 2:56am gmt"
 		},
 		{
 			"id": "102985032087602705",
@@ -3913,8 +4239,8 @@
 				"header_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/headers/000/000/036/original/5690a1fb94868d9f.png",
 				"followers_count": 4,
 				"following_count": 2,
-				"statuses_count": 33,
-				"last_status_at": "2019-10-21T22:01:34.136Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T13:24:02.094Z",
 				"emojis": [],
 				"fields": [
 					{
@@ -3947,7 +4273,8 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/18/19 7:28pm gmt"
 		},
 		{
 			"id": "102985852689953827",
@@ -3960,7 +4287,7 @@
 			"language": "en",
 			"uri": "https://m.speculativeartsresearch.com/users/max/statuses/102985852689953827",
 			"url": "https://m.speculativeartsresearch.com/@max/102985852689953827",
-			"replies_count": 0,
+			"replies_count": 1,
 			"reblogs_count": 0,
 			"favourites_count": 0,
 			"favourited": false,
@@ -3988,8 +4315,8 @@
 				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
 				"followers_count": 13,
 				"following_count": 0,
-				"statuses_count": 31,
-				"last_status_at": "2019-10-21T19:10:46.819Z",
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
 				"emojis": [],
 				"fields": []
 			},
@@ -4006,7 +4333,68 @@
 			"emojis": [],
 			"card": null,
 			"poll": null,
-			"has_media": false
+			"has_media": false,
+			"datestr": "10/18/19 10:56pm gmt"
+		},
+		{
+			"id": "103069258389841617",
+			"created_at": "2019-11-02T16:27:52.749Z",
+			"in_reply_to_id": "102985852689953827",
+			"in_reply_to_account_id": "36",
+			"sensitive": false,
+			"spoiler_text": "",
+			"visibility": "public",
+			"language": "en",
+			"uri": "https://m.speculativeartsresearch.com/users/max/statuses/103069258389841617",
+			"url": "https://m.speculativeartsresearch.com/@max/103069258389841617",
+			"replies_count": 0,
+			"reblogs_count": 0,
+			"favourites_count": 0,
+			"favourited": false,
+			"reblogged": false,
+			"muted": false,
+			"content": "<p><span class=\"h-card\"><a href=\"https://m.speculativeartsresearch.com/@z\" class=\"u-url mention\">@<span>z</span></a></span> allowed Neverborn, anchorkin and other sentient static-forms to operate linguistic formats.</p><p>Himbert “Himroy” Himhiminy himself had ratified a concept, at .6789 concord, which detailed an ongoing cosmogenic plane. Though fraught with dovetail atavisms, it pulsed to moderated sensibility, hinting at hidden substratum cores where Humans still existed, in some cyb-erian or hyperbaric stasis, engineering /Nous/ haphazardly by a dance of Dionysian informatics.</p>",
+			"reblog": null,
+			"application": {
+				"name": "Tootle for Mastodon",
+				"website": null
+			},
+			"account": {
+				"id": "1",
+				"username": "max",
+				"acct": "max",
+				"display_name": "Max Razdow",
+				"locked": false,
+				"bot": false,
+				"created_at": "2019-09-26T20:44:32.478Z",
+				"note": "<p>“We are speaking of a man of the clockwash, a former student at Andervox and the shale.  Who knows how his corporeal aspect runs through time in our land.  Perhaps he was cursed to decompose a score of years in a day by some charlatan monk of his land.”</p><p>Artist / Editor of Speculative Arts Research / Admin of this place</p>",
+				"url": "https://m.speculativeartsresearch.com/@max",
+				"avatar": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/001/original/908b64bc31baae28.jpg",
+				"avatar_static": "https://cf.mastohost.com/v1/AUTH_91eb37814936490c95da7b85993cc2ff/mastospeculativeartsresearchcom/accounts/avatars/000/000/001/original/908b64bc31baae28.jpg",
+				"header": "https://m.speculativeartsresearch.com/headers/original/missing.png",
+				"header_static": "https://m.speculativeartsresearch.com/headers/original/missing.png",
+				"followers_count": 13,
+				"following_count": 0,
+				"statuses_count": 34,
+				"last_status_at": "2019-11-02T16:27:52.759Z",
+				"emojis": [],
+				"fields": []
+			},
+			"media_attachments": [],
+			"mentions": [
+				{
+					"id": "36",
+					"username": "z",
+					"url": "https://m.speculativeartsresearch.com/@z",
+					"acct": "z"
+				}
+			],
+			"tags": [],
+			"emojis": [],
+			"card": null,
+			"poll": null,
+			"has_media": false,
+			"datestr": "11/2/19 4:27pm gmt"
 		}
 	]
 ]

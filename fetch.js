@@ -66,6 +66,7 @@ function connectNodes(map){
 }
 
 function dateStr(datestr){
+	
     let dt = new Date(datestr);
     return dt.getUTCMonth()+1+'/'+dt.getDate()+'/'+'19'+' '+d(dt.getUTCHours(), dt.getMinutes());
 
