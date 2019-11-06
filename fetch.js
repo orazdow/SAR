@@ -95,12 +95,16 @@ M.get('timelines/home', (err, data, res)=>{
 				topchain = ret;
 				indexIds(topchain, idmap);
 				connectNodes(idmap);
-				root = idmap[ret[0][0].id];
+				// root = [];
+				// for(chain of topchain){
+				// 	root.push(idmap[chain[0].id]);
+				// }
+				root = idmap[topchain[topchain.length-1][0].id];
 
 			}
 
 			if(list){
-				console.log(topchain[0].length);
+				console.log(topchain[topchain.length-1].length);
 			}
 			else if(tree){
 				 console.log(JSON.stringify(root, null, '\t'));

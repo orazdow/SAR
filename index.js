@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import ReactJson from 'react-json-view';
-import Tree from 'react-d3-tree';
 // import statuses from './sar_statuses.json';
+import Tree from 'react-d3-tree';
 import sar_tree from './sar_tree.json';
 
 
@@ -17,21 +17,16 @@ class Main extends Component{
 		super(props);
 		// window.statuses = statuses;
 		window.tree = sar_tree;
-		window.dfs = (node, int)=>{
-			let i = int;
+		window.dfs = (node)=>{
+			let i = 1;
 			for(let n of node.children){
-				i += dfs(n, int);
+				i += dfs(n);
 			}
 			return i;
 		}
 		this.nodeMouseOver = this.nodeMouseOver.bind(this);
 		this.nodeMouseClick = this.nodeMouseClick.bind(this);
 		this.nodeMouseOut = this.nodeMouseOut.bind(this);
-		this.disp;
-		this.idlabel;
-		this.linklabel;
-		this.img;
-		this.rect;
 		this.selected = null;
 	}
 
@@ -141,13 +136,13 @@ class Main extends Component{
 			<div className="treeDiv" style={{width: '60em', height: '150em', float: 'left'}}>
 			<p style={{'width':'100%', 'paddingLeft': '270px'}}>click to select, use arrow keys to navigate selection</p>
 			<Tree data={sar_tree} 
-			orientation="vertical" 
-			collapsible={false}
-			zoom={0.5} 
-			translate={{x:350, y:15}} 
-			onMouseOver={this.nodeMouseOver}
-			onMouseOut={this.nodeMouseOut}
-			onClick={this.nodeMouseClick}
+				orientation="vertical" 
+				collapsible={false}
+				zoom={0.5} 
+				translate={{x:350, y:15}} 
+				onMouseOver={this.nodeMouseOver}
+				onMouseOut={this.nodeMouseOut}
+				onClick={this.nodeMouseClick}
 			/>
 			</div>
 
