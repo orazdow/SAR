@@ -138,8 +138,9 @@ class Main extends Component{
 			<Tree data={sar_tree} 
 				orientation="vertical" 
 				collapsible={false}
-				zoom={0.5} 
-				translate={{x:350, y:15}} 
+				zoom={0.49} 
+				translate={{x:360, y:20}} 
+				// pathFunc="straight"
 				onMouseOver={this.nodeMouseOver}
 				onMouseOut={this.nodeMouseOut}
 				onClick={this.nodeMouseClick}
