@@ -11,7 +11,7 @@ class Branch{
 		}else{
 			this.dir = dir.copy();	
 			this.dir.normalize();
-			//this.dir.rotate(0.2);
+			// this.dir.rotate(0.2);
 			this.pos = parent.pos.copy();
 			this.pos.add(this.dir.mult(dd));
 		}
@@ -70,7 +70,7 @@ class Tree{
 
 		let found = false;
 		let branch = this.root;
-		let pan = false;
+		
 		for(var i = this.leaves.length-1; i >= 0; i--){
 	
 			let record = 10000;
@@ -91,6 +91,7 @@ class Tree{
 				found = true;
 				branch.grow = true;
 				let dir = p5.Vector.sub(this.leaves[i], branch.pos).normalize();
+				// dir.rotate(0.3);
 				branch.dir.add(dir);
 			}
 		}
@@ -98,11 +99,10 @@ class Tree{
 			if(this.leaves.length){
 			//this.root = branch.next();
 			this.branches.push(branch.next());
-			}else{ /*this.branches.shift();*/ }
+			}
 		}else{
 			for(var i = this.branches.length - 1; i >= 0; i--){
 				if(this.branches[i].grow){
-					if(this.branches[i].pos.y < 100){ pan = true; }
 					this.branches[i].dir.normalize();
 
 					let next = this.branches[i].next();
@@ -112,7 +112,7 @@ class Tree{
 				}
 			}
 		}
-		if(pan){
+		if(true){ // pan 4
 			for(let i = this.branches.length-1; i >= 0; i--){
 				this.branches[i].pos.add(0, 4);
 				if(this.branches[i].pos.y > height){
@@ -167,10 +167,10 @@ class Tree{
 	}
 
 	display(){
-		console.log(this.branches.length);
+		// console.log(this.branches.length);
 		background(90);
 		this.show();
-		//this.showLeaves();
+		// this.showLeaves();
 	}
 
 	show(){
