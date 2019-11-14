@@ -5,7 +5,54 @@ import ReactDOM from 'react-dom';
 // import statuses from './sar_statuses.json';
 import Tree from 'react-d3-tree';
 import sar_tree from './sar_tree.json';
+import Reader from './reader.js';
 
+
+class Ctl extends Component{
+
+	constructor(props){
+		super(props);
+		this.state = { checked : false, speech : false };
+		this.onClick_traverse = this.onClick_traverse.bind(this);
+		this.onClick_speech = this.onClick_speech.bind(this);
+	}
+
+	onClick_traverse(event){
+		this.props.traverseCb(!this.state.checked);
+		this.setState({checked : !this.state.checked});
+	}
+
+	onClick_speech(event){
+		this.props.speechCb(!this.state.speech);
+		this.setState({speech : !this.state.speech});
+	}
+
+	render(){
+		return(
+			<div style={{'paddingLeft': '20px'}}>
+
+			<p style={{'width':'100%'}}>click to select, use arrow keys to navigate selection</p>
+			<label>
+			<input
+			    type="checkbox"
+			    checked={this.state.checked}
+			    onChange={this.onClick_traverse}
+			/>
+			traverse
+			</label>
+			<label>
+			<input
+			    type="checkbox"
+			    checked={this.state.speech}
+			    onChange={this.onClick_speech}
+			/>
+			speech
+			</label>
+			</div>
+		);
+	}
+
+}
 
 function label(status){
 	return "author: "+status.account.username+"\ntime: "+status.datestr+"\nid: "+status.id;
@@ -28,6 +75,10 @@ class Main extends Component{
 		this.nodeMouseClick = this.nodeMouseClick.bind(this);
 		this.nodeMouseOut = this.nodeMouseOut.bind(this);
 		this.selected = null;
+		this.reader = new Reader(this);
+		this.traverseCb = this.traverseCb.bind(this);
+		this.speechCb = this.speechCb.bind(this);
+		this.traverse = false;
 	}
 
 	componentDidMount(){	
@@ -92,10 +143,27 @@ class Main extends Component{
         		this.idlabel.innerHTML = label(this.selected.status);
 				this.linklabel.href = this.selected.status.url;
 				this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
+		    	if(this.traverse){
+		    		this.reader.initRead(this.selected);
+		    	}else if(this.reader.speechmode){
+		    		this.reader.speakOnce(this.selected);
+		    	}
 
 			}
 		}, true);
 
+	}
+
+	traverseCb(checked){
+		this.traverse = checked;
+		if(!checked){
+			this.reader.cancelRead();
+		}
+	}
+
+	speechCb(checked){
+		console.log(this);
+		this.reader.setSpeech(checked);
 	}
 
 	nodeMouseOver(event){
@@ -122,7 +190,22 @@ class Main extends Component{
         this.rect.setAttributeNS(null, 'y', event.y-25);
         this.rect.setAttributeNS(null, 'stroke-opacity', '1');
     	this.img.src = event.status.has_media ? event.status.media_attachments[0].url : "";
-        
+    	if(this.traverse){
+    		this.reader.initRead(event);
+    	}else if(this.reader.speechmode){
+    		this.reader.speakOnce(event);
+    	}
+	}
+
+	changeNode(event){
+		this.selected = event;
+        this.rect.setAttributeNS(null, 'x', this.selected.x-25);
+        this.rect.setAttributeNS(null, 'y', this.selected.y-25);
+        this.rect.setAttributeNS(null, 'stroke-opacity', '1');
+        this.disp.innerHTML = this.selected.status.content;
+		this.idlabel.innerHTML = label(this.selected.status);
+		this.linklabel.href = this.selected.status.url;
+		this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";		
 	}
 
 	render(){
@@ -134,7 +217,9 @@ class Main extends Component{
 			{/*<ReactJson src={sar_tree} collapsed={true} theme="monokai" />*/}
 
 			<div className="treeDiv" style={{width: '60em', height: '150em', float: 'left'}}>
-			<p style={{'width':'100%', 'paddingLeft': '270px'}}>click to select, use arrow keys to navigate selection</p>
+
+			<Ctl traverseCb={this.traverseCb} speechCb={this.speechCb}/>
+
 			<Tree data={sar_tree} 
 				orientation="vertical" 
 				collapsible={false}
