@@ -104,6 +104,7 @@ class Main extends Component{
 
 			if(this.selected){
 				let len = this.selected.children ? this.selected.children.length : 0;
+				console.log
 				switch(e.keyCode){
 					case 40 : //down
 					e.preventDefault();
@@ -111,22 +112,20 @@ class Main extends Component{
 						this.selected = this.selected.children[0];
 					}else if(len === 2){
 						this.selected = this.selected.children[0];
-					}else if(len === 3){
-						this.selected = this.selected.children[1];
+					}else if(len > 2){
+						this.selected = this.selected.children[len-2];
 					}
 					break;
 					case 37 : //left
 					e.preventDefault();
-					if(len === 2 || len === 3){
+					if(len > 1){
 						this.selected = this.selected.children[0];
 					}
 					break;
 					case 39 : //right
 					e.preventDefault();
-					if(len === 2){
-						this.selected = this.selected.children[1];
-					}else if(len === 3){
-						this.selected = this.selected.children[2];
+					if(len > 1){
+						this.selected = this.selected.children[len-1];
 					}
 					break;
 					case 38 : // up
@@ -139,7 +138,7 @@ class Main extends Component{
 		        this.rect.setAttributeNS(null, 'x', this.selected.x-25);
 		        this.rect.setAttributeNS(null, 'y', this.selected.y-25);
 		        this.rect.setAttributeNS(null, 'stroke-opacity', '1');
-		        this.disp.innerHTML = this.selected.status.content;
+		        this.disp.innerHTML = this.selected.status.content_fulltext;
         		this.idlabel.innerHTML = label(this.selected.status);
 				this.linklabel.href = this.selected.status.url;
 				this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
@@ -167,7 +166,7 @@ class Main extends Component{
 	}
 
 	nodeMouseOver(event){
-		this.disp.innerHTML = event.status.content;
+		this.disp.innerHTML = event.status.content_fulltext;
 		this.idlabel.innerHTML = label(event.status);
 		this.linklabel.href = event.status.url;
 		this.linklabel.innerHTML = "link";
@@ -176,7 +175,7 @@ class Main extends Component{
 
 	nodeMouseOut(event){
 		if(this.selected){
-			this.disp.innerHTML = this.selected.status.content;
+			this.disp.innerHTML = this.selected.status.content_fulltext;
 			this.idlabel.innerHTML = label(this.selected.status);
 			this.linklabel.href = this.selected.status.url;
 	    	this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
@@ -202,7 +201,7 @@ class Main extends Component{
         this.rect.setAttributeNS(null, 'x', this.selected.x-25);
         this.rect.setAttributeNS(null, 'y', this.selected.y-25);
         this.rect.setAttributeNS(null, 'stroke-opacity', '1');
-        this.disp.innerHTML = this.selected.status.content;
+        this.disp.innerHTML = this.selected.status.content_fulltext;
 		this.idlabel.innerHTML = label(this.selected.status);
 		this.linklabel.href = this.selected.status.url;
 		this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";		

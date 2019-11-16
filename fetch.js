@@ -60,7 +60,12 @@ function connectNodes(map){
 		let child = map[keys[i]];
 		let parent = map[child.status.in_reply_to_id];
 		if(child && parent){
-			parent.children.push(child);
+			if(!(child.status.account.username == "Annotator1")){
+				parent.children.push(child);
+			}
+			else{
+				//annotate data
+			}
 		}
 	}
 }
@@ -75,12 +80,47 @@ function dateStr(datestr){
     }
 }
 
+// </i> blunders
+function fixBlunders(str){
+    let s = str.replace(/I&gt/g, 'i&gt');
+    let i = s.indexOf('/i&gt;');
+    if(i < 0) return s;
+    if(s.charAt(i+6) != ' '){
+       return s.substr(0, i+6)+' '+s.substr(i+6);
+    }
+}
+
+function slashItalics(str){
+    let num = (str.match(/(?<!<)\/(?!>)/g)|| []).length;
+    if(num <= 1) return str;
+    for(let i = 0; i <num; i++){
+         str = str.replace(/(?<!<)\/(?!>)/,  ((i%2) == 0 )? '<i>' : '<~i>');
+    }
+    str = str.replace(/~/gm, '/');
+    return str;
+}
+
+function contentStr(str){
+    str = str.substr(0, str.lastIndexOf('</p>')).substr(str.lastIndexOf('</span>')+7).replace(/^ /, '');
+    str = fixBlunders(str);
+    str = str.replace(/&gt;/g, '>');
+    str = str.replace(/&lt;/g, '<');
+    str = str.replace(/&quot;/g, '"');
+    str = str.replace(/&apos;/g, "'");
+    str = str.replace(/&amp;/g, '&');
+    str = slashItalics(str);
+    return str;
+}
+
+function ttsStr(str){
+	return str.replace(/<.*?>/g, '').replace(/¹/g, '1'); //.replace(/🆒/g, 'cool')
+}
+
 M.get('timelines/home', (err, data, res)=>{
 
 		let filt = data.filter((el)=>{
 			return !ignores.includes(el.id);
 		});
-		// console.log(filt);
 
 		getChain(M, filt, (ret)=>{
 
@@ -89,6 +129,9 @@ M.get('timelines/home', (err, data, res)=>{
 
 					el.has_media = el.media_attachments[0] ? true : false;
 					el.datestr = dateStr(el.created_at);
+					el.content_text = contentStr(el.content);
+					el.content_fulltext = el.content.match(/<a.*?a>/)[0] + ' ' + el.content_text;
+					el.content_tts = ttsStr(el.content_text);
 
 				}
 

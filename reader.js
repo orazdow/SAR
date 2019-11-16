@@ -33,7 +33,7 @@ class Tts{
 		if(!this.isinit){
 			this.initAudio();
 		}		
-		this.msg.text = node.status.content;
+		this.msg.text = node.status.content_tts;
 		window.speechSynthesis.speak(this.msg);
 	}
 
