@@ -94,9 +94,9 @@ function slashItalics(str){
     let num = (str.match(/(?<!<)\/(?!>)/g)|| []).length;
     if(num <= 1) return str;
     for(let i = 0; i <num; i++){
-         str = str.replace(/(?<!<)\/(?!>)/,  ((i%2) == 0 )? '<i>' : '<~i>');
+         str = str.replace(/(?<!<)\/(?!>)/,  ((i%2) == 0 )? '<i>' : '<~*i>');
     }
-    str = str.replace(/~/gm, '/');
+    str = str.replace(/~\*/gm, '/');
     return str;
 }
 
@@ -113,7 +113,7 @@ function contentStr(str){
 }
 
 function ttsStr(str){
-	return str.replace(/<.*?>/g, '').replace(/¹/g, '1'); //.replace(/🆒/g, 'cool')
+	return str.replace(/<.*?>/g, '').replace(/¹/g, '1').replace(/(\.)(?!\.| )/gm, '. '); //.replace(/🆒/g, 'cool')
 }
 
 M.get('timelines/home', (err, data, res)=>{
