@@ -70,8 +70,7 @@ function connectNodes(map){
 	}
 }
 
-function dateStr(datestr){
-	
+function dateStr(datestr){	
     let dt = new Date(datestr);
     return dt.getUTCMonth()+1+'/'+dt.getDate()+'/'+'19'+' '+d(dt.getUTCHours(), dt.getMinutes());
 
@@ -80,28 +79,38 @@ function dateStr(datestr){
     }
 }
 
-// </i> blunders
 function fixBlunders(str){
-    let s = str.replace(/I&gt/g, 'i&gt');
-    let i = s.indexOf('/i&gt;');
-    if(i < 0) return s;
-    if(s.charAt(i+6) != ' '){
-       return s.substr(0, i+6)+' '+s.substr(i+6);
+    str = str.replace(/I&gt/g, 'i&gt');
+    str = str.replace(/<br\/>/g, '<br>');
+    str = str.replace(/<br \/>/g, '<br>');
+    let i = str.indexOf('/i&gt;');
+    if(i < 0) return str;
+    if(str.charAt(i+6) != ' '){
+       return str.substr(0, i+6)+' '+str.substr(i+6);
     }
+    return str;
 }
 
 function slashItalics(str){
-    let num = (str.match(/(?<!<)\/(?!>)/g)|| []).length;
-    if(num <= 1) return str;
-    for(let i = 0; i <num; i++){
-         str = str.replace(/(?<!<)\/(?!>)/,  ((i%2) == 0 )? '<i>' : '<~*i>');
+	let hrefs = (str.match(/\"http(.*?)\"/gm) || []);
+	for(let i = 0; i < hrefs.length; i++){
+		str = str.replace(hrefs[i], '#*'+i);
+	}
+    str = str.replace(/(?<=[a-zA-Z0-9])(\/)(?=[a-zA-Z0-9])/gm, '##*');    
+    let num = (str.match(/(?<!<|< )(\/)/gm)|| []).length;
+	if(num%2 != 0) num = num-1;
+    for(let i = 0; i < num; i++){
+        str = str.replace(/(?<!<|< )(\/)/,  ((i%2) == 0 )? '<i>' : '<~*i>');
     }
     str = str.replace(/~\*/gm, '/');
+    str = str.replace(/##\*/gm, '/');
+	for(let i = 0; i < hrefs.length; i++){
+		str = str.replace('#*'+i, hrefs[i]);
+	}
     return str;
 }
 
 function contentStr(str){
-    str = str.substr(0, str.lastIndexOf('</p>')).substr(str.lastIndexOf('</span>')+7).replace(/^ /, '');
     str = fixBlunders(str);
     str = str.replace(/&gt;/g, '>');
     str = str.replace(/&lt;/g, '<');
@@ -109,11 +118,11 @@ function contentStr(str){
     str = str.replace(/&apos;/g, "'");
     str = str.replace(/&amp;/g, '&');
     str = slashItalics(str);
-    return str;
+    return str.match(/(?<=<p>)(.*)(?=<\/p>)/gm)[0];
 }
 
 function ttsStr(str){
-	return str.replace(/<.*?>/g, '').replace(/¹/g, '1').replace(/(\.)(?!\.| )/gm, '. '); //.replace(/🆒/g, 'cool')
+	return str.replace(/<.*?>/g, '').replace(/@(.*?) /gm, '').replace(/¹/g, '1').replace(/(\.)(?!\.| )/gm, '. ');
 }
 
 M.get('timelines/home', (err, data, res)=>{
@@ -130,7 +139,6 @@ M.get('timelines/home', (err, data, res)=>{
 					el.has_media = el.media_attachments[0] ? true : false;
 					el.datestr = dateStr(el.created_at);
 					el.content_text = contentStr(el.content);
-					el.content_fulltext = el.content.match(/<a.*?a>/)[0] + ' ' + el.content_text;
 					el.content_tts = ttsStr(el.content_text);
 
 				}

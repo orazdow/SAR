@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-// import ReactJson from 'react-json-view';
-// import statuses from './sar_statuses.json';
 import Tree from 'react-d3-tree';
 import sar_tree from './sar_tree.json';
 import Reader from './reader.js';
@@ -62,7 +60,6 @@ class Main extends Component{
 
 	constructor(props){
 		super(props);
-		// window.statuses = statuses;
 		window.tree = sar_tree;
 		window.dfs = (node)=>{
 			let i = 1;
@@ -82,7 +79,6 @@ class Main extends Component{
 	}
 
 	componentDidMount(){	
-		// document.querySelector('body').style.backgroundColor = "#333333";
 		document.querySelector('body').style.backgroundColor = "#dedcd5";
 		this.disp = document.querySelector("#readContent");
 		this.idlabel = document.querySelector("#idlabel");
@@ -115,38 +111,30 @@ class Main extends Component{
 					}else if(len > 2){
 						this.selected = this.selected.children[len-2];
 					}
+					this.changeNode(this.selected, true);
 					break;
 					case 37 : //left
 					e.preventDefault();
 					if(len > 1){
 						this.selected = this.selected.children[0];
 					}
+					this.changeNode(this.selected, true);
 					break;
 					case 39 : //right
 					e.preventDefault();
 					if(len > 1){
 						this.selected = this.selected.children[len-1];
 					}
+					this.changeNode(this.selected, true);
 					break;
 					case 38 : // up
 					e.preventDefault();
 					if(this.selected.parent){
 						this.selected = this.selected.parent;
 					}
+					this.changeNode(this.selected, true);
 					break;
 				}
-		        this.rect.setAttributeNS(null, 'x', this.selected.x-25);
-		        this.rect.setAttributeNS(null, 'y', this.selected.y-25);
-		        this.rect.setAttributeNS(null, 'stroke-opacity', '1');
-		        this.disp.innerHTML = this.selected.status.content_fulltext;
-        		this.idlabel.innerHTML = label(this.selected.status);
-				this.linklabel.href = this.selected.status.url;
-				this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
-		    	if(this.traverse){
-		    		this.reader.initRead(this.selected);
-		    	}else if(this.reader.speechmode){
-		    		this.reader.speakOnce(this.selected);
-		    	}
 
 			}
 		}, true);
@@ -166,7 +154,7 @@ class Main extends Component{
 	}
 
 	nodeMouseOver(event){
-		this.disp.innerHTML = event.status.content_fulltext;
+		this.disp.innerHTML = event.status.content_text;
 		this.idlabel.innerHTML = label(event.status);
 		this.linklabel.href = event.status.url;
 		this.linklabel.innerHTML = "link";
@@ -175,7 +163,7 @@ class Main extends Component{
 
 	nodeMouseOut(event){
 		if(this.selected){
-			this.disp.innerHTML = this.selected.status.content_fulltext;
+			this.disp.innerHTML = this.selected.status.content_text;
 			this.idlabel.innerHTML = label(this.selected.status);
 			this.linklabel.href = this.selected.status.url;
 	    	this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
@@ -184,27 +172,24 @@ class Main extends Component{
 
 	nodeMouseClick(event){
 		console.log(event);
-		this.selected = event;
-        this.rect.setAttributeNS(null, 'x', event.x-25);
-        this.rect.setAttributeNS(null, 'y', event.y-25);
-        this.rect.setAttributeNS(null, 'stroke-opacity', '1');
-    	this.img.src = event.status.has_media ? event.status.media_attachments[0].url : "";
-    	if(this.traverse){
-    		this.reader.initRead(event);
-    	}else if(this.reader.speechmode){
-    		this.reader.speakOnce(event);
-    	}
+		this.changeNode(event, true);
 	}
 
-	changeNode(event){
+	changeNode(event, init){
 		this.selected = event;
         this.rect.setAttributeNS(null, 'x', this.selected.x-25);
         this.rect.setAttributeNS(null, 'y', this.selected.y-25);
         this.rect.setAttributeNS(null, 'stroke-opacity', '1');
-        this.disp.innerHTML = this.selected.status.content_fulltext;
+        this.disp.innerHTML = this.selected.status.content_text;
 		this.idlabel.innerHTML = label(this.selected.status);
 		this.linklabel.href = this.selected.status.url;
-		this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";		
+		this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
+		if(init)
+    	if(this.traverse){
+    		this.reader.initRead(this.selected);
+    	}else if(this.reader.speechmode){
+    		this.reader.speakOnce(this.selected);
+    	}	
 	}
 
 	render(){
@@ -212,8 +197,6 @@ class Main extends Component{
 		return(
 
 			<div id="maindiv" style={{'display' : 'inline-block'}}>
-
-			{/*<ReactJson src={sar_tree} collapsed={true} theme="monokai" />*/}
 
 			<div className="treeDiv" style={{width: '60em', height: '150em', float: 'left'}}>
 
