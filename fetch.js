@@ -64,31 +64,31 @@ function connectNodes(map){
 				parent.children.push(child);
 			}
 			else{
-				//annotate data
+				// annotate data
 			}
 		}
 	}
 }
 
 function dateStr(datestr){	
-    let dt = new Date(datestr);
-    return dt.getUTCMonth()+1+'/'+dt.getDate()+'/'+'19'+' '+d(dt.getUTCHours(), dt.getMinutes());
+	let dt = new Date(datestr);
+	return dt.getUTCMonth()+1+'/'+dt.getDate()+'/'+'19'+' '+d(dt.getUTCHours(), dt.getMinutes());
 
-    function d(h, m){
-      return (h == 0 ? '12:'+m+'am' : h-12 < 0 ? h+':'+m+'am' : h-12 == 0 ? '12:'+m+'pm' : h-12+':'+m+'pm')+" gmt";
-    }
+	function d(h, m){
+	  return (h == 0 ? '12:'+m+'am' : h-12 < 0 ? h+':'+m+'am' : h-12 == 0 ? '12:'+m+'pm' : h-12+':'+m+'pm')+" gmt";
+	}
 }
 
 function fixBlunders(str){
-    str = str.replace(/I&gt/g, 'i&gt');
-    str = str.replace(/<br\/>/g, '<br>');
-    str = str.replace(/<br \/>/g, '<br>');
-    let i = str.indexOf('/i&gt;');
-    if(i < 0) return str;
-    if(str.charAt(i+6) != ' '){
-       return str.substr(0, i+6)+' '+str.substr(i+6);
-    }
-    return str;
+	str = str.replace(/I&gt/g, 'i&gt');
+	str = str.replace(/<br\/>/g, '<br>');
+	str = str.replace(/<br \/>/g, '<br>');
+	let i = str.indexOf('/i&gt;');
+	if(i < 0) return str;
+	if(str.charAt(i+6) != ' '){
+	   return str.substr(0, i+6)+' '+str.substr(i+6);
+	}
+	return str;
 }
 
 function slashItalics(str){
@@ -96,33 +96,33 @@ function slashItalics(str){
 	for(let i = 0; i < hrefs.length; i++){
 		str = str.replace(hrefs[i], '#*'+i);
 	}
-    str = str.replace(/(?<=[a-zA-Z0-9])(\/)(?=[a-zA-Z0-9])/gm, '##*');    
-    let num = (str.match(/(?<!<|< )(\/)/gm)|| []).length;
+	str = str.replace(/(?<=[a-zA-Z0-9])(\/)(?=[a-zA-Z0-9])/gm, '##*');    
+	let num = (str.match(/(?<!<|< )(\/)/gm)|| []).length;
 	if(num%2 != 0) num = num-1;
-    for(let i = 0; i < num; i++){
-        str = str.replace(/(?<!<|< )(\/)/,  ((i%2) == 0 )? '<i>' : '<~*i>');
-    }
-    str = str.replace(/~\*/gm, '/');
-    str = str.replace(/##\*/gm, '/');
+	for(let i = 0; i < num; i++){
+		str = str.replace(/(?<!<|< )(\/)/,  ((i%2) == 0 )? '<i>' : '<~*i>');
+	}
+	str = str.replace(/~\*/gm, '/');
+	str = str.replace(/##\*/gm, '/');
 	for(let i = 0; i < hrefs.length; i++){
 		str = str.replace('#*'+i, hrefs[i]);
 	}
-    return str;
+	return str;
 }
 
 function contentStr(str){
-    str = fixBlunders(str);
-    str = str.replace(/&gt;/g, '>');
-    str = str.replace(/&lt;/g, '<');
-    str = str.replace(/&quot;/g, '"');
-    str = str.replace(/&apos;/g, "'");
-    str = str.replace(/&amp;/g, '&');
-    str = slashItalics(str);
-    return str.match(/(?<=<p>)(.*)(?=<\/p>)/gm)[0];
+	str = fixBlunders(str);
+	str = str.replace(/&gt;/g, '>');
+	str = str.replace(/&lt;/g, '<');
+	str = str.replace(/&quot;/g, '"');
+	str = str.replace(/&apos;/g, "'");
+	str = str.replace(/&amp;/g, '&');
+	str = slashItalics(str);
+	return str.match(/(?<=<p>)(.*)(?=<\/p>)/gm)[0];
 }
 
 function ttsStr(str){
-	return str.replace(/<.*?>/g, '').replace(/@(.*?) /gm, '').replace(/¹/g, '1').replace(/(\.)(?!\.| )/gm, '. ');
+	return str.replace(/(<\/p>)/gm, ' ').replace(/<.*?>/g, '').replace(/@(.*?) /gm, '').replace(/¹/g, '1').replace(/(\.)(?!\.| )/gm, '. ');
 }
 
 M.get('timelines/home', (err, data, res)=>{

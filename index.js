@@ -32,17 +32,17 @@ class Ctl extends Component{
 			<p style={{'width':'100%'}}>click to select, use arrow keys to navigate selection</p>
 			<label>
 			<input
-			    type="checkbox"
-			    checked={this.state.checked}
-			    onChange={this.onClick_traverse}
+				type="checkbox"
+				checked={this.state.checked}
+				onChange={this.onClick_traverse}
 			/>
 			traverse
 			</label>
 			<label>
 			<input
-			    type="checkbox"
-			    checked={this.state.speech}
-			    onChange={this.onClick_speech}
+				type="checkbox"
+				checked={this.state.speech}
+				onChange={this.onClick_speech}
 			/>
 			speech
 			</label>
@@ -85,22 +85,21 @@ class Main extends Component{
 		this.linklabel = document.querySelector("#linklabel");
 		this.img = document.querySelector("#t_image")
 		let svg = document.querySelector(".rd3t-tree-container svg g");
-        this.rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        this.rect.setAttributeNS(null, 'x', -25);
-        this.rect.setAttributeNS(null, 'y', -25);
-        this.rect.setAttributeNS(null, 'height', '50');
-        this.rect.setAttributeNS(null, 'width', '50');
-        this.rect.setAttributeNS(null, 'fill', '#FF0000');
-        this.rect.setAttributeNS(null, 'stroke', '#FF0000');
-        this.rect.setAttributeNS(null, 'fill-opacity', '0.0');
-        this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
-        svg.appendChild(this.rect);
+		this.rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+		this.rect.setAttributeNS(null, 'x', -25);
+		this.rect.setAttributeNS(null, 'y', -25);
+		this.rect.setAttributeNS(null, 'height', '50');
+		this.rect.setAttributeNS(null, 'width', '50');
+		this.rect.setAttributeNS(null, 'fill', '#FF0000');
+		this.rect.setAttributeNS(null, 'stroke', '#FF0000');
+		this.rect.setAttributeNS(null, 'fill-opacity', '0.0');
+		this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
+		svg.appendChild(this.rect);
 
 		document.addEventListener('keydown',(e)=>{
 
 			if(this.selected){
 				let len = this.selected.children ? this.selected.children.length : 0;
-				console.log
 				switch(e.keyCode){
 					case 40 : //down
 					e.preventDefault();
@@ -113,6 +112,7 @@ class Main extends Component{
 					}
 					this.changeNode(this.selected, true);
 					break;
+
 					case 37 : //left
 					e.preventDefault();
 					if(len > 1){
@@ -120,6 +120,7 @@ class Main extends Component{
 					}
 					this.changeNode(this.selected, true);
 					break;
+
 					case 39 : //right
 					e.preventDefault();
 					if(len > 1){
@@ -127,6 +128,7 @@ class Main extends Component{
 					}
 					this.changeNode(this.selected, true);
 					break;
+
 					case 38 : // up
 					e.preventDefault();
 					if(this.selected.parent){
@@ -144,7 +146,9 @@ class Main extends Component{
 	traverseCb(checked){
 		this.traverse = checked;
 		if(!checked){
-			this.reader.cancelRead();
+			this.reader.cancelRead(); 
+		}else if(this.reader.speechmode){
+			this.reader.tts.stopped = false;
 		}
 	}
 
@@ -158,7 +162,7 @@ class Main extends Component{
 		this.idlabel.innerHTML = label(event.status);
 		this.linklabel.href = event.status.url;
 		this.linklabel.innerHTML = "link";
-    	this.img.src = event.status.has_media ? event.status.media_attachments[0].url : "";
+		this.img.src = event.status.has_media ? event.status.media_attachments[0].url : "";
 	}
 
 	nodeMouseOut(event){
@@ -166,7 +170,7 @@ class Main extends Component{
 			this.disp.innerHTML = this.selected.status.content_text;
 			this.idlabel.innerHTML = label(this.selected.status);
 			this.linklabel.href = this.selected.status.url;
-	    	this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
+			this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
 		}
 	}
 
@@ -177,19 +181,19 @@ class Main extends Component{
 
 	changeNode(event, init){
 		this.selected = event;
-        this.rect.setAttributeNS(null, 'x', this.selected.x-25);
-        this.rect.setAttributeNS(null, 'y', this.selected.y-25);
-        this.rect.setAttributeNS(null, 'stroke-opacity', '1');
-        this.disp.innerHTML = this.selected.status.content_text;
+		this.rect.setAttributeNS(null, 'x', this.selected.x-25);
+		this.rect.setAttributeNS(null, 'y', this.selected.y-25);
+		this.rect.setAttributeNS(null, 'stroke-opacity', '1');
+		this.disp.innerHTML = this.selected.status.content_text;
 		this.idlabel.innerHTML = label(this.selected.status);
 		this.linklabel.href = this.selected.status.url;
 		this.img.src = this.selected.status.has_media ? this.selected.status.media_attachments[0].url : "";
 		if(init)
-    	if(this.traverse){
-    		this.reader.initRead(this.selected);
-    	}else if(this.reader.speechmode){
-    		this.reader.speakOnce(this.selected);
-    	}	
+		if(this.traverse){
+			this.reader.initRead(this.selected);
+		}else if(this.reader.speechmode){
+			this.reader.speakOnce(this.selected);
+		}	
 	}
 
 	render(){
@@ -198,15 +202,15 @@ class Main extends Component{
 
 			<div id="maindiv" style={{'display' : 'inline-block'}}>
 
-			<div className="treeDiv" style={{width: '60em', height: '150em', float: 'left'}}>
+			<div className="treeDiv" style={{width: '55em', height: '150em', float: 'left'}}>
 
 			<Ctl traverseCb={this.traverseCb} speechCb={this.speechCb}/>
 
 			<Tree data={sar_tree} 
 				orientation="vertical" 
 				collapsible={false}
-				zoom={0.49} 
-				translate={{x:360, y:20}} 
+				zoom={0.44} 
+				translate={{x:370, y:20}} 
 				// pathFunc="straight"
 				onMouseOver={this.nodeMouseOver}
 				onMouseOut={this.nodeMouseOut}
@@ -215,7 +219,7 @@ class Main extends Component{
 			</div>
 
 
-			<div className="readout" style={{ 'width' : '520px', 'float' : 'right'}}>
+			<div className="readout" style={{ 'width' : '520px', 'float' : 'right', 'paddingLeft' : '2vw'}}>
 			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'paddingLeft': '10px', 'fontWeight':'bold', 'lineHeight': '1.3'}}></p>
 			<pre id="idlabel" style={{'padding': '5px', 'paddingLeft': '10px', 'margin' : '0px'}}></pre>
 			<a id="linklabel" target="_blank" href="#" style={{'padding': '5px', 'paddingLeft': '10px'}}></a>

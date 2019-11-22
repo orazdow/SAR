@@ -78,6 +78,7 @@ class Reader{
 
 	speakOnce(node){
 		this.cancelRead();
+		this.currentNode = node;
 		this.tts.speak(node);
 	}
 
