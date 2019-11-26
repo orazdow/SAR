@@ -11,9 +11,9 @@ import Reader from './reader.js';
 	In colleboration with ThoughtWorks Arts, SnarkArts and SingularityNet
 */}}
 
-function Headersection(props){
+function Headersection(props){ 
 	return (
-		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px'}}>
+		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px', 'fontSize' : '0.97em'}}>
 			<p style={{'margin' : '5px', 'paddingBottom' : '8px'}}>
 				All Possible Pathways  &nbsp;-&nbsp; An emergent story by <a href="http://razdow.org/" target="_blank">Max Razdow</a>&nbsp;
 				and <a href="http://jamiezigelbaum.com/" target="_blank">Jamie Zigelbaum</a>. 
@@ -50,13 +50,14 @@ class Ctl extends Component{
 		return(
 			<div style={{'paddingLeft': '25px'}}>
 
-			<p style={{'width':'100%', 'marginTop' : '0px', 'marginBottom' : '8px'}}>
+			<p style={{'width':'100%', 'marginTop' : '0px', 'marginBottom' : '8px', 'fontSize' : '0.92em'}}>
 			click to select, use arrow keys to navigate selection</p>
 			<label>
 			<input
 				type="checkbox"
 				checked={this.state.checked}
 				onChange={this.onClick_traverse}
+				style={{'marginLeft' : '2px'}}
 			/>
 			traverse
 			</label>
