@@ -5,6 +5,27 @@ import Tree from 'react-d3-tree';
 import sar_tree from './sar_tree.json';
 import Reader from './reader.js';
 
+{{/*
+	All Possible Pathways story viewer
+	Narritive by Max Razdow and Jaime Zigelbaum, site by Ollie Razdow
+	In colleboration with ThoughtWorks Arts, SnarkArts and SingularityNet
+*/}}
+
+function Headersection(props){
+	return (
+		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px'}}>
+			<p style={{'margin' : '5px', 'paddingBottom' : '8px'}}>
+				All Possible Pathways  &nbsp;-&nbsp; An emergent story by <a href="http://razdow.org/" target="_blank">Max Razdow</a>&nbsp;
+				and <a href="http://jamiezigelbaum.com/" target="_blank">Jamie Zigelbaum</a>. 
+				Viewer by <a href="http://orazdow.github.io/" target="_blank">Ollie Razdow</a> 
+				<hr></hr>In collaboration with <a href="https://thoughtworksarts.io/newsletters/democratization-ai-blockchain-residency-awarded-max-razdow-ollie-razdow-jamie-zigelbaum/" target="_blank">ThoughtWorks Arts</a> 
+				&nbsp;<a href="https://snark.art/" target="_blank">SnarkArts</a> and&nbsp;
+				<a href="https://singularitynet.io/" target="_blank">SingularityNet</a>
+				<hr style={{'marginBottom': '0px'}}></hr>
+			</p>
+		</div>
+	);
+}
 
 class Ctl extends Component{
 
@@ -27,9 +48,10 @@ class Ctl extends Component{
 
 	render(){
 		return(
-			<div style={{'paddingLeft': '20px'}}>
+			<div style={{'paddingLeft': '25px'}}>
 
-			<p style={{'width':'100%'}}>click to select, use arrow keys to navigate selection</p>
+			<p style={{'width':'100%', 'marginTop' : '0px', 'marginBottom' : '8px'}}>
+			click to select, use arrow keys to navigate selection</p>
 			<label>
 			<input
 				type="checkbox"
@@ -202,7 +224,9 @@ class Main extends Component{
 
 			<div id="maindiv" style={{'display' : 'inline-block'}}>
 
-			<div className="treeDiv" style={{width: '55em', height: '150em', float: 'left'}}>
+			<div className="treeDiv" style={{width: '55em', height: '83vh', float: 'left' }}>
+
+			<Headersection/>
 
 			<Ctl traverseCb={this.traverseCb} speechCb={this.speechCb}/>
 
@@ -219,8 +243,8 @@ class Main extends Component{
 			</div>
 
 
-			<div className="readout" style={{ 'width' : '520px', 'float' : 'right', 'paddingLeft' : '2vw'}}>
-			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'paddingLeft': '10px', 'fontWeight':'bold', 'lineHeight': '1.3'}}></p>
+			<div className="readout" style={{ 'width' : '520px', 'float' : 'right', 'paddingLeft' : '3vw'}}>
+			<p id="readContent" style={{'width':'100%', 'padding': '5px', 'marginTop' : '5px', 'paddingLeft': '10px', 'fontWeight':'bold', 'lineHeight': '1.3'}}></p>
 			<pre id="idlabel" style={{'padding': '5px', 'paddingLeft': '10px', 'margin' : '0px'}}></pre>
 			<a id="linklabel" target="_blank" href="#" style={{'padding': '5px', 'paddingLeft': '10px'}}></a>
 			<img id="t_image" src="" style={{'maxWidth': '650px', 'height':'auto', 'padding' : '10px'}}></img>
