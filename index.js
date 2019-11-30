@@ -8,7 +8,7 @@ import Reader from './reader.js';
 {{/*
 	All Possible Pathways story viewer
 	Narritive by Max Razdow and Jaime Zigelbaum, site by Ollie Razdow
-	In colleboration with ThoughtWorks Arts, SnarkArts and SingularityNet
+	In collaboration with ThoughtWorks Arts, SnarkArts and SingularityNet
 */}}
 
 function Headersection(props){ 
