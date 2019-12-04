@@ -13,7 +13,7 @@ import Reader from './reader.js';
 
 function Headersection(props){ 
 	return (
-		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px', 'fontSize' : '0.97em'}}>
+		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px', 'fontSize' : '0.96em'}}>
 			<p style={{'margin' : '5px', 'paddingBottom' : '8px'}}>
 				All Possible Pathways  &nbsp;-&nbsp; An emergent story by <a href="http://razdow.org/" target="_blank">Max Razdow</a>&nbsp;
 				and <a href="http://jamiezigelbaum.com/" target="_blank">Jamie Zigelbaum</a>. 
