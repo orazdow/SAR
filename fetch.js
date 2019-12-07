@@ -10,8 +10,8 @@ const M = new Mastodon({
   access_token: 'ucWy4RVspk_dd3WltM6hkCxB-t79W8a5L9E1jhG3KsA',
   client_Secret: 'lv73u8daG5qvSqtiVWR3ORDUxCsJebe8Ut-MEmWaaqA',
   client_key: 'Bh8db_Smd21NE0lSY-tElw3MT0WKe20mQh-7Uro9CI0',
-  timeout_ms: 60*1000, 
-  api_url: 'https://m.speculativeartsresearch.com/api/v1/', 
+  timeout_ms: 60*1000,
+  api_url: 'https://m.speculativeartsresearch.com/api/v1/',
 });
 
 let topchain = [];
@@ -28,7 +28,7 @@ const getChain = async (M, roots, cb)=>{
 		let r_id = chains[i][0].id;
 		await M.get('statuses/'+r_id+'/context', (err, data, res)=>{
 			chains[i] = chains[i].concat(data.descendants);
-		}); 
+		});
 
 	}
 
@@ -47,7 +47,7 @@ function indexIds(topchain, dict){
 function miniNode(el){
 	return {
 		name : el.id,
-		attributes : null,
+		attributes : void 0,
 		status: el,
 		children : []
 	};
@@ -70,7 +70,7 @@ function connectNodes(map){
 	}
 }
 
-function dateStr(datestr){	
+function dateStr(datestr){
 	let dt = new Date(datestr);
 	return dt.getUTCMonth()+1+'/'+dt.getDate()+'/'+'19'+' '+d(dt.getUTCHours(), dt.getMinutes());
 
@@ -96,7 +96,7 @@ function slashItalics(str){
 	for(let i = 0; i < hrefs.length; i++){
 		str = str.replace(hrefs[i], '#*'+i);
 	}
-	str = str.replace(/(?<=[a-zA-Z0-9])(\/)(?=[a-zA-Z0-9])/gm, '##*');    
+	str = str.replace(/(?<=[a-zA-Z0-9])(\/)(?=[a-zA-Z0-9])/gm, '##*');
 	let num = (str.match(/(?<!<|< )(\/)/gm)|| []).length;
 	if(num%2 != 0) num = num-1;
 	for(let i = 0; i < num; i++){
@@ -133,7 +133,7 @@ M.get('timelines/home', (err, data, res)=>{
 
 		getChain(M, filt, (ret)=>{
 
-			for(let chain of ret){		
+			for(let chain of ret){
 				for(let el of chain){
 
 					el.has_media = el.media_attachments[0] ? true : false;
