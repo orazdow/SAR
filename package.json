@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify --debug index.js -o bundle.js",
+    "lint": "tslint --format stylish --project tsconfig.json --config tslint.json --fix",
+    "build": "npm run lint && node build.js > bundle.js",
     "watch": "rum . bundle.js -p 8000 --  --debug index.js",
-    "fetch": "node fetch.js tree > sar_tree.json",
+    "data-bundle": "browserify -r ./sar_tree.json | terser -c -m > data.js",
+    "fetch": "node fetch.js tree > sar_tree.json && npm run data-bundle",
     "list": "node fetch list",
-    "prod": "browserify index.js -o bundle.js && uglifyjs bundle.js -o bundle.js"
+    "prod": "npm run lint && node build.js | terser -m -c > bundle.js"
   },
   "keywords": [],
   "author": "",
@@ -17,30 +19,16 @@
     "mastodon-api": "^1.3.0",
     "react": "^16.12.0",
     "react-d3-tree": "^1.15.3",
-    "react-dom": "^16.12.0",
-    "react-json-view": "^1.19.1"
-  },
-  "browserify": {
-    "transform": [
-      "cssify",
-      [
-        "babelify",
-        {
-          "presets": [
-            "react",
-            "env"
-          ]
-        }
-      ]
-    ]
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babelify": "^8.0.0",
-    "browserify": "^14.5.0",
-    "cssify": "^1.0.3",
-    "rum": "^5.1.0"
+    "@types/react": "^16.9.15",
+    "@types/react-dom": "^16.9.4",
+    "browserify": "^16.5.0",
+    "rum": "^5.1.0",
+    "terser": "^4.4.2",
+    "tsify": "^4.0.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
   }
 }
