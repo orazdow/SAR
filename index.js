@@ -13,7 +13,7 @@ import Reader from './reader.js';
 
 function Headersection(props){ 
 	return (
-		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px', 'fontSize' : '0.96em', 'zIndex' : '5'}}>
+		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px', 'fontSize' : '0.96em'}}>
 			<p style={{'margin' : '5px', 'paddingBottom' : '8px'}}>
 				All Possible Pathways  &nbsp;-&nbsp; An emergent story by <a href="http://razdow.org/" target="_blank">Max Razdow</a>&nbsp;
 				and <a href="http://jamiezigelbaum.com/" target="_blank">Jamie Zigelbaum</a>. 
@@ -95,22 +95,50 @@ function label(status){
 	return "author: "+status.account.username+"\ntime: "+status.datestr+"\nid: "+status.id;
 }
 
+window.dfs = (node, cb)=>{
+	let i = 1;
+	for(let n of node.children || []){
+		if(cb) cb(n);
+		i += dfs(n);
+	}
+	return i;
+}
+
+function bfs(root, target){
+	let thislevel = [];
+	thislevel.push(root);
+	let a = 0;
+
+	while(thislevel.length){
+		let nextLevel = [];
+		let index = -1;
+		let i = 0;
+		for(let n of thislevel){ 
+			a++;
+			for(let child of n.children || []){
+				nextLevel.push(child);
+				if(target && target.name == child.name){index = i;}
+				i++;
+			}
+		}
+		thislevel = nextLevel;
+		// console.log(thislevel.map(el => el.name));
+		if(index >= 0) return {arr : thislevel, index : index};
+	}
+	return a;
+}
+
 class Main extends Component{
 
 	constructor(props){
 		super(props);
 		window.tree = sar_tree;
-		window.dfs = (node)=>{
-			let i = 1;
-			for(let n of node.children){
-				i += dfs(n);
-			}
-			return i;
-		}
+		window.main = this;
 		this.nodeMouseOver = this.nodeMouseOver.bind(this);
 		this.nodeMouseClick = this.nodeMouseClick.bind(this);
 		this.nodeMouseOut = this.nodeMouseOut.bind(this);
 		this.graphUpdate = this.graphUpdate.bind(this);
+		this.getLevel = this.getLevel.bind(this);
 		this.selected = null;
 		this.reader = new Reader(this);
 		this.traverseCb = this.traverseCb.bind(this);
@@ -123,21 +151,15 @@ class Main extends Component{
 		this.currentZoom = 0.44;
 	}
 
-	translateSVG(x, y){
-		this.transform = this.svg.transform.baseVal.getItem(0);
-		this.transform.setTranslate(x, y);
-	}
-
 	componentDidMount(){	
 		document.querySelector('body').style.backgroundColor = "#dedcd5";
-		this.graph = this.graphref.current;
 		this.disp = document.querySelector("#readContent");
 		this.idlabel = document.querySelector("#idlabel");
 		this.linklabel = document.querySelector("#linklabel");
 		this.img = document.querySelector("#t_image");
+		this.graph = this.graphref.current;
+		this.tree = this.graph.state.data[0];
 		this.svg = document.querySelector('.'+this.graph.state.rd3tGClassName);
-		window.graph = this.graph;
-		window.svg = this.svg;
 		this.rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 		this.rect.setAttributeNS(null, 'x', -25);
 		this.rect.setAttributeNS(null, 'y', -25);
@@ -149,6 +171,8 @@ class Main extends Component{
 		this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
 		this.svg.appendChild(this.rect);
 		this.transform = this.svg.transform.baseVal.getItem(0);
+		window.graph = this.graph;
+		window.svg = this.svg;
 
 		document.addEventListener('keydown',(e)=>{
 
@@ -170,9 +194,13 @@ class Main extends Component{
 					case 37 : //left
 					e.preventDefault();
 					if(len > 1){
-						if(len < 4)
 						this.selected = this.selected.children[0];
-						else this.selected = this.selected.children[len-3];
+					}else{
+						let level = this.getLevel(this.selected);
+						if(level.arr){
+							let i = level.index;
+							if(i > 0) this.selected = level.arr[i-1];
+						}
 					}
 					this.changeNode(this.selected, true);
 					break;
@@ -181,6 +209,12 @@ class Main extends Component{
 					e.preventDefault();
 					if(len > 1){
 						this.selected = this.selected.children[len-1];
+					}else{
+						let level = this.getLevel(this.selected);
+						if(level.arr){
+							let i = level.index;
+							if(i < level.arr.length-1) this.selected = level.arr[i+1];
+						}
 					}
 					this.changeNode(this.selected, true);
 					break;
@@ -197,6 +231,15 @@ class Main extends Component{
 			}
 		}, true);
 
+	}
+
+	getLevel(node){
+		return bfs(this.tree, node);
+	}
+
+	translateSVG(x, y){
+		this.transform = this.svg.transform.baseVal.getItem(0);
+		this.transform.setTranslate(x, y);
 	}
 
 	traverseCb(checked){
@@ -302,6 +345,3 @@ class Main extends Component{
 }
 
 ReactDOM.render(<Main />, document.getElementById('root'));
-
-
-
