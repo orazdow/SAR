@@ -13,7 +13,7 @@ import Reader from './reader.js';
 
 function Headersection(props){ 
 	return (
-		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px', 'fontSize' : '0.96em'}}>
+		<div style={{'padding' : '20px', 'paddingTop': '10px', 'paddingBottom' : '0px', 'paddingRight' : '80px', 'fontSize' : '0.96em', 'zIndex' : '5'}}>
 			<p style={{'margin' : '5px', 'paddingBottom' : '8px'}}>
 				All Possible Pathways  &nbsp;-&nbsp; An emergent story by <a href="http://razdow.org/" target="_blank">Max Razdow</a>&nbsp;
 				and <a href="http://jamiezigelbaum.com/" target="_blank">Jamie Zigelbaum</a>. 
@@ -31,9 +31,10 @@ class Ctl extends Component{
 
 	constructor(props){
 		super(props);
-		this.state = { checked : false, speech : false };
+		this.state = { checked : false, speech : false, follow : false };
 		this.onClick_traverse = this.onClick_traverse.bind(this);
 		this.onClick_speech = this.onClick_speech.bind(this);
+		this.onClick_follow = this.onClick_follow.bind(this);
 	}
 
 	onClick_traverse(event){
@@ -44,6 +45,11 @@ class Ctl extends Component{
 	onClick_speech(event){
 		this.props.speechCb(!this.state.speech);
 		this.setState({speech : !this.state.speech});
+	}
+
+	onClick_follow(event){
+		this.props.followCb(!this.state.follow);
+		this.setState({follow : !this.state.follow});
 	}
 
 	render(){
@@ -66,8 +72,18 @@ class Ctl extends Component{
 				type="checkbox"
 				checked={this.state.speech}
 				onChange={this.onClick_speech}
+				style={{'marginLeft' : '8px'}}
 			/>
 			speech
+			</label>
+			<label>
+			<input
+				type="checkbox"
+				checked={this.state.follow}
+				onChange={this.onClick_follow}
+				style={{'marginLeft' : '8px'}}
+			/>
+			follow
 			</label>
 			</div>
 		);
@@ -94,20 +110,34 @@ class Main extends Component{
 		this.nodeMouseOver = this.nodeMouseOver.bind(this);
 		this.nodeMouseClick = this.nodeMouseClick.bind(this);
 		this.nodeMouseOut = this.nodeMouseOut.bind(this);
+		this.graphUpdate = this.graphUpdate.bind(this);
 		this.selected = null;
 		this.reader = new Reader(this);
 		this.traverseCb = this.traverseCb.bind(this);
 		this.speechCb = this.speechCb.bind(this);
+		this.followCb = this.followCb.bind(this);
 		this.traverse = false;
+		this.follow = false;
+		this.translateSVG = this.translateSVG.bind(this);
+		this.graphref = React.createRef();
+		this.currentZoom = 0.44;
+	}
+
+	translateSVG(x, y){
+		this.transform = this.svg.transform.baseVal.getItem(0);
+		this.transform.setTranslate(x, y);
 	}
 
 	componentDidMount(){	
 		document.querySelector('body').style.backgroundColor = "#dedcd5";
+		this.graph = this.graphref.current;
 		this.disp = document.querySelector("#readContent");
 		this.idlabel = document.querySelector("#idlabel");
 		this.linklabel = document.querySelector("#linklabel");
-		this.img = document.querySelector("#t_image")
-		let svg = document.querySelector(".rd3t-tree-container svg g");
+		this.img = document.querySelector("#t_image");
+		this.svg = document.querySelector('.'+this.graph.state.rd3tGClassName);
+		window.graph = this.graph;
+		window.svg = this.svg;
 		this.rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 		this.rect.setAttributeNS(null, 'x', -25);
 		this.rect.setAttributeNS(null, 'y', -25);
@@ -117,7 +147,8 @@ class Main extends Component{
 		this.rect.setAttributeNS(null, 'stroke', '#FF0000');
 		this.rect.setAttributeNS(null, 'fill-opacity', '0.0');
 		this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
-		svg.appendChild(this.rect);
+		this.svg.appendChild(this.rect);
+		this.transform = this.svg.transform.baseVal.getItem(0);
 
 		document.addEventListener('keydown',(e)=>{
 
@@ -139,7 +170,9 @@ class Main extends Component{
 					case 37 : //left
 					e.preventDefault();
 					if(len > 1){
+						if(len < 4)
 						this.selected = this.selected.children[0];
+						else this.selected = this.selected.children[len-3];
 					}
 					this.changeNode(this.selected, true);
 					break;
@@ -176,8 +209,11 @@ class Main extends Component{
 	}
 
 	speechCb(checked){
-		console.log(this);
 		this.reader.setSpeech(checked);
+	}
+
+	followCb(checked){
+		this.follow = checked;
 	}
 
 	nodeMouseOver(event){
@@ -202,6 +238,10 @@ class Main extends Component{
 		this.changeNode(event, true);
 	}
 
+	graphUpdate(event){
+		this.currentZoom = event.zoom;
+	}
+
 	changeNode(event, init){
 		this.selected = event;
 		this.rect.setAttributeNS(null, 'x', this.selected.x-25);
@@ -216,7 +256,9 @@ class Main extends Component{
 			this.reader.initRead(this.selected);
 		}else if(this.reader.speechmode){
 			this.reader.speakOnce(this.selected);
-		}	
+		}
+		if(this.follow)
+			this.translateSVG(-1*this.currentZoom*event.x + 380, -1*this.currentZoom*event.y + 120);	
 	}
 
 	render(){
@@ -229,17 +271,19 @@ class Main extends Component{
 
 			<Headersection/>
 
-			<Ctl traverseCb={this.traverseCb} speechCb={this.speechCb}/>
+			<Ctl traverseCb={this.traverseCb} speechCb={this.speechCb} followCb={this.followCb}/>
 
 			<Tree data={sar_tree} 
 				orientation="vertical" 
 				collapsible={false}
-				zoom={0.44} 
+				zoom={this.currentZoom} 
 				translate={{x:370, y:20}} 
 				// pathFunc="straight"
 				onMouseOver={this.nodeMouseOver}
 				onMouseOut={this.nodeMouseOut}
 				onClick={this.nodeMouseClick}
+				onUpdate={this.graphUpdate}
+				ref={this.graphref}
 			/>
 			</div>
 
