@@ -6,8 +6,9 @@
   "scripts": {
     "build": "browserify --debug index.js -o bundle.js",
     "watch": "rum . bundle.js -p 8000 --  --debug index.js",
-    "fetch": "node fetch.js tree > sar_tree.json",
-    "list": "node fetch list",
+    "fetch": "node fetch",
+    "request": "node fetch request",
+    "buildtree": "node fetch build",
     "prod": "browserify index.js -o bundle.js && uglifyjs bundle.js -o bundle.js"
   },
   "keywords": [],

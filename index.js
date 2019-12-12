@@ -97,11 +97,21 @@ function label(status){
 
 window.dfs = (node, cb)=>{
 	let i = 1;
+	if(cb)cb(node);
 	for(let n of node.children || []){
-		if(cb) cb(n);
-		i += dfs(n);
+		i += dfs(n, cb);
 	}
 	return i;
+}
+
+function dfsFindByID(node, id){
+	let rtn = null;
+	if(node.name == id)rtn = node;
+	else
+	for(let n of node.children || []){
+		if(rtn = dfsFindByID(n,id))return rtn;
+	}
+	return rtn;
 }
 
 function bfs(root, target){
@@ -139,6 +149,7 @@ class Main extends Component{
 		this.nodeMouseOut = this.nodeMouseOut.bind(this);
 		this.graphUpdate = this.graphUpdate.bind(this);
 		this.getLevel = this.getLevel.bind(this);
+		this.findNode = this.findNode.bind(this);
 		this.selected = null;
 		this.reader = new Reader(this);
 		this.traverseCb = this.traverseCb.bind(this);
@@ -171,6 +182,20 @@ class Main extends Component{
 		this.rect.setAttributeNS(null, 'stroke-opacity', '0.0');
 		this.svg.appendChild(this.rect);
 		this.transform = this.svg.transform.baseVal.getItem(0);
+		this.map = {};
+		// portal exit circles
+		window.dfs(this.tree, (node)=>{
+			//this.map[node.name] = node;
+			if(node.portal_from){ 
+				let c =  document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+				c.setAttributeNS(null, 'cx', node.x);
+				c.setAttributeNS(null, 'cy', node.y);
+			    c.setAttributeNS(null, 'r', 25);
+			    c.setAttributeNS(null, 'fill', 'none');
+			    c.setAttributeNS(null, 'stroke', '#22ff55');
+			    this.svg.appendChild(c);
+			}
+		})
 		window.graph = this.graph;
 		window.svg = this.svg;
 
@@ -187,6 +212,11 @@ class Main extends Component{
 						this.selected = this.selected.children[0];
 					}else if(len > 2){
 						this.selected = this.selected.children[len-2];
+					}else{
+						if(this.selected.portal){
+							let n = this.findNode(this.selected.portal);
+							if(n) this.selected = n;
+						}
 					}
 					this.changeNode(this.selected, true);
 					break;
@@ -235,6 +265,10 @@ class Main extends Component{
 
 	getLevel(node){
 		return bfs(this.tree, node);
+	}
+
+	findNode(id){
+		return dfsFindByID(this.tree, id);
 	}
 
 	translateSVG(x, y){

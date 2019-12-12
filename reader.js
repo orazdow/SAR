@@ -113,12 +113,14 @@ class Reader{
 	}
 
 	choose_random(node){
-		let len = node.children ? node.children.length : 0;
-		if(len == 0) return null;
-		if(len == 1) return node.children[0];
-		else{ 
-			return node.children[Math.round(Math.random()*(len-1))];
+		let arr = node.children ? node.children : [];
+		if(node.portal){
+			let arr2 = arr.slice();
+			let n = this.parent.findNode(node.portal);
+			if(n) arr2.push(n); 
+			arr = arr2;
 		}
+		return arr[Math.round(Math.random()*(arr.length-1))];
 	}
 
 }

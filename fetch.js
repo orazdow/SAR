@@ -1,10 +1,10 @@
 const Mastodon = require('mastodon-api');
+const fs = require('fs');
 
-const ignores = ['102883438707628266','102860765893027028'];
-// const testRoot = '102893816974487737';
-
-const list = process.argv[2] == 'list' ? true : false;
-const tree = process.argv[2] == 'tree' ? true : false;
+const ignores = ['102883438707628266','102860765893027028']; 
+const statuses_file = 'sar_statuses.json';
+const tree_file = 'sar_tree.json';
+const cmd = process.argv[2]; 
 
 const M = new Mastodon({
   access_token: 'ucWy4RVspk_dd3WltM6hkCxB-t79W8a5L9E1jhG3KsA',
@@ -14,18 +14,72 @@ const M = new Mastodon({
   api_url: 'https://m.speculativeartsresearch.com/api/v1/', 
 });
 
-let topchain = [];
-let idmap = {};
-let root = null;
 
+if(!cmd || cmd == 'request'){
+	requestData();
+}
+if(cmd == 'build'){
+	buildTreeFromFile();
+}
+
+
+// request data and write file, build tree (arg: 'request' or '')
+function requestData(){
+	let topchain = [];
+
+	M.get('timelines/home', (err, data, res)=>{
+
+		let filt = data.filter((el)=>{
+			return !ignores.includes(el.id);
+		});
+
+		getChain(M, filt, (ret)=>{
+
+			topchain = ret;
+			// write statuses file 
+			fs.writeFile(statuses_file, JSON.stringify(ret, null, '\t'), 'utf8', (err)=>{
+				if (err) throw err;
+				console.log('returned mastodon data len:', ret[ret.length-1].length);
+
+				// build tree
+				if(!cmd){ 
+					let tree = buildTree(topchain);
+					fs.writeFile(tree_file, JSON.stringify(tree, null, '\t'), 'utf8', (err)=>{
+						if(err) throw err;
+						console.log('tree built');
+					});
+				}
+
+			});
+
+		});
+
+	}).catch(err => console.log(err)).then(()=>{ /* */ });
+}
+
+// build tree from file (arg: 'build')
+function buildTreeFromFile(){
+	fs.readFile('./'+statuses_file, 'utf8', (err, data)=>{
+    	if(err) throw err;
+
+		let tree = buildTree(JSON.parse(data));
+
+		fs.writeFile(tree_file, JSON.stringify(tree, null, '\t'), 'utf8', (err)=>{
+			if(err) throw err;
+			console.log('tree built');
+		});
+
+	});
+}
+
+// append replies
 const getChain = async (M, roots, cb)=>{
-
 	let chains = [];
 
 	for(let i = 0; i < roots.length; i++){
-
 		chains.push(new Array(roots[i]));
 		let r_id = chains[i][0].id;
+
 		await M.get('statuses/'+r_id+'/context', (err, data, res)=>{
 			chains[i] = chains[i].concat(data.descendants);
 		}); 
@@ -33,8 +87,29 @@ const getChain = async (M, roots, cb)=>{
 	}
 
 	cb(chains);
-
 };
+
+// construct tree 
+function buildTree(topchain){
+	let idmap = {};
+	for(let chain of topchain){
+		for(let el of chain){
+
+			el.has_media = el.media_attachments[0] ? true : false;
+			el.datestr = dateStr(el.created_at);
+			el.content_text = contentStr(el.content);
+			el.content_tts = ttsStr(el.content_text);
+			inlineParams(el);
+		}
+	}
+
+	indexIds(topchain, idmap);
+	connectNodes(idmap);
+	let root = idmap[topchain[topchain.length-1][0].id];
+	postProc(root, idmap);
+	return root;
+}
+
 
 function indexIds(topchain, dict){
 	for(let chain of topchain){
@@ -45,15 +120,26 @@ function indexIds(topchain, dict){
 }
 
 function miniNode(el){
-	return {
+	let node = {
 		name : el.id,
 		attributes : null,
 		status: el,
 		children : []
 	};
+	if(el.params && el.params.portal){
+		node.portal = el.params.portal;
+		node.nodeSvgShape = {
+			shapeProps : {
+				shape : 'circle',
+				fill : '#22aa55',
+				r : 10
+			}
+		}
+	}
+	return node;
 }
 
-function connectNodes(map){
+function connectNodes(map){ 
 	var keys = Object.keys(map);
 
 	for(var i =  keys.length-1; i >= 0; i--){
@@ -68,6 +154,48 @@ function connectNodes(map){
 			}
 		}
 	}
+}
+
+function dfs(node, cb){
+	let i = 1;
+	if(cb)cb(node);
+	for(let n of node.children){
+		i += dfs(n, cb);
+	}
+	return i;
+}
+
+function postProc(root, map){
+	dfs(root, (node)=>{ 
+		if(node.portal){ 
+			let n = map[node.portal];
+			n.portal_from = node.name;
+		}
+	});
+}
+
+function inlineParams(status){
+	let str = status.content;
+	let p = getParams(str);
+	if(!p) return;
+	let params = {};
+	for(let pair of p){
+		if(isNaN(parseFloat(pair[0])))
+		params[pair[0]] = pair[1]; 
+	}
+	if(Object.keys(params).length){status.params = params;}
+}
+
+function getParams(str){
+    str = (str.match(/(?<={)(.*?)(?=})/gm)||[])[0];
+    if(!str) return null;
+	str = str.replace(/( )/gm, '');
+    let arr = str.split(',').map(p => p.split('=')).filter(el => el.length == 2);
+    return arr;
+}
+
+function jsonVal(str){
+    return !isNaN(parseFloat(str)) ? parseFloat(str) : (str == 'true' || str == 'false')? (str == 'true') : str;
 }
 
 function dateStr(datestr){	
@@ -122,51 +250,11 @@ function contentStr(str){
 }
 
 function ttsStr(str){
-	return str.replace(/(<\/p>)/gm, ' ').replace(/<.*?>/g, '').replace(/@(.*?) /gm, '').replace(/¹/g, '1').replace(/(\.)(?!\.| )/gm, '. ');
+	return str.replace(/(<\/p>)/gm, ' ')
+	.replace(/<.*?>/g, '')
+	.replace(/{(.*?)}/gm, '')
+	.replace(/@(.*?) /gm, '')
+	.replace(/¹/g, '1')
+	.replace(/(\.)(?!\.| )/gm, '. ')
+	.replace(/END/gm, ' ');
 }
-
-M.get('timelines/home', (err, data, res)=>{
-
-		let filt = data.filter((el)=>{
-			return !ignores.includes(el.id);
-		});
-
-		getChain(M, filt, (ret)=>{
-
-			for(let chain of ret){		
-				for(let el of chain){
-
-					el.has_media = el.media_attachments[0] ? true : false;
-					el.datestr = dateStr(el.created_at);
-					el.content_text = contentStr(el.content);
-					el.content_tts = ttsStr(el.content_text);
-
-				}
-
-				topchain = ret;
-				indexIds(topchain, idmap);
-				connectNodes(idmap);
-				// root = [];
-				// for(chain of topchain){
-				// 	root.push(idmap[chain[0].id]);
-				// }
-				root = idmap[topchain[topchain.length-1][0].id];
-
-			}
-
-			if(list){
-				console.log(topchain[topchain.length-1].length);
-			}
-			else if(tree){
-				 console.log(JSON.stringify(root, null, '\t'));
-			}else{
-				 console.log(JSON.stringify(topchain, null, '\t'));
-			}
-
-		});
-
-}).catch(err => console.log(err)).then(()=>{
-
-	// console.log('\nDONE');
-
-});
