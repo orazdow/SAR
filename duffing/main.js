@@ -107,19 +107,20 @@ function setup(){
 	fill(0);
 	tau = tau/c;
 }
-
+let n = 0;
 function draw(){ 
-
+	
 	if(poincare){
 		background(bkgd);
 		rot(rt);
 		rad.data = (""+section).substr(0,4)+" rad";
+		console.log(n);
 	}else{
 		fill(bkgd, 16);
 		rect(0 ,0 , width, height);
 	}
 
-	
+	n = 0;
 	for(var i = 0; i < num; i++){
 
 		// rossler
@@ -152,8 +153,9 @@ function draw(){
 		// let py = 200+(-y)*100;
 
 		if(poincare){
-			if(Math.abs((c*t)-section) < 0.004)
-				rect(px, py, 2, 2);			
+			if(Math.abs((c*t)-section) < 0.004){
+				rect(px, py, 2, 2);	n++;		
+			}
 		}
 		else{
 			point(px, py); 

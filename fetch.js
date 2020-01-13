@@ -150,7 +150,10 @@ function connectNodes(map){
 				parent.children.push(child);
 			}
 			else{
-				// annotate data
+				let p = annotatorParams(child.status.content);
+				if(parent.params) parent.params.props = p;
+				else{parent.params = {}; parent.params.props = p;}	
+				if(p) parent.annotated = true;			
 			}
 		}
 	}
@@ -192,6 +195,47 @@ function getParams(str){
 	str = str.replace(/( )/gm, '');
     let arr = str.split(',').map(p => p.split('=')).filter(el => el.length == 2);
     return arr;
+}
+
+function annotatorParams(str){
+    return jsonParams(getAnnotatorParams(propStr(str)));
+}
+
+function getAnnotatorParams(str){
+    str = str.replace(/( )/gm, '');
+    let arrs = (str.match(/(?<=\[)(.*?)(?=\])/gm)||[]);
+    str = str.replace(/(\[)(.*?)(\])/gm, '~#~');
+    arrs.forEach((el, i)=>{
+        arrs[i] = el.split(',');
+    });
+    let arr = str.split(',').map(p => p.split('=')).filter(el => el.length == 2);
+    let n = 0;
+    arr.forEach((el, i)=>{
+        if(el[1] == '~#~'){el[1] = arrs[n++];}
+    });
+    return arr;
+}
+
+function jsonParams(arrs){
+	let params = {};
+	for(let pair of arrs){
+		params[pair[0]] = pair[1]; 
+	}
+	return params;
+}
+
+function propStr(str){
+	str = fixBlunders(str);
+	str = str.replace(/&gt;/g, '>');
+	str = str.replace(/&lt;/g, '<');
+	str = str.replace(/&quot;/g, '"');
+	str = str.replace(/&apos;/g, "'");
+	str = str.replace(/&amp;/g, '&');
+	str = str.match(/(?<=<p>)(.*)(?=<\/p>)/gm)[0];
+    str = str.replace(/(<\/p>)/gm, ' ');
+	str = str.replace(/<.*?>/g, '');
+	str = str.replace(/@(.*?) /gm, '');
+    return str;
 }
 
 function jsonVal(str){
