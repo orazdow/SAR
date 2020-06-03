@@ -192,7 +192,7 @@ class Main extends Component{
 				c.setAttributeNS(null, 'cy', node.y);
 			    c.setAttributeNS(null, 'r', 25);
 			    c.setAttributeNS(null, 'fill', 'none');
-			    c.setAttributeNS(null, 'stroke', '#22ff55');
+			    c.setAttributeNS(null, 'stroke', node.color);
 			    this.svg.appendChild(c);
 			}
 		})
@@ -208,12 +208,12 @@ class Main extends Component{
 				switch(e.keyCode){
 					case 40 : //down
 					e.preventDefault();
-
 					if(this.selected.portal){
 						let n = this.findNode(this.selected.portal);
 						let arr = [...this.selected.children];
 						if(n) arr.unshift(n);
 						let i = Math.round(Math.random()*(arr.length-1));
+						if(i < 0) i = 0;
 						this.selected = arr[i];
 					}else{
 						if(len === 1){

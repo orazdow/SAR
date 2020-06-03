@@ -119,6 +119,14 @@ function indexIds(topchain, dict){
 	}
 }
 
+function idcolor(id) {
+	let n = +id;
+	let r = (n-222)%256;
+	let g = (n-333)%256;
+	let b = (n-444)%256;
+	return `rgb(${r}, ${g}, ${b})`;
+}
+
 function miniNode(el){
 	let node = {
 		name : el.id,
@@ -128,10 +136,11 @@ function miniNode(el){
 	};
 	if(el.params && el.params.portal){
 		node.portal = el.params.portal;
+		node.color = idcolor(node.portal);
 		node.nodeSvgShape = {
 			shapeProps : {
 				shape : 'circle',
-				fill : '#22aa55',
+				fill : node.color, //'#22aa55'
 				r : 10
 			}
 		}
@@ -173,6 +182,7 @@ function postProc(root, map){
 		if(node.portal){ 
 			let n = map[node.portal];
 			n.portal_from = node.name;
+			n.color = node.color;
 		}
 	});
 }

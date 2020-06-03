@@ -1061,7 +1061,8 @@
 																								"content_tts": "It was assumed, in the deep registers of the trees, that a cicada like insect conglomerate was possible, which would know more.   This emergent agency called itself the Old Council, which was a misnomer, as any Articulator worth its silicate would tell you that this Old Council was actually quite new.  Very new, so new as to escape burgeoning consensus time all together, and exist instead in a state of rising need awareness, like a positivist messiah grub-firm of potential being. The Old"
 																							},
 																							"children": [],
-																							"portal_from": "104193207932456507"
+																							"portal_from": "104193207932456507",
+																							"color": "rgb(192, 80, 224)"
 																						},
 																						{
 																							"name": "103103732379612130",
@@ -4144,16 +4145,18 @@
 																																																																											},
 																																																																											"children": [],
 																																																																											"portal": "103267298716425046",
+																																																																											"color": "rgb(112, 0, 144)",
 																																																																											"nodeSvgShape": {
 																																																																												"shapeProps": {
 																																																																													"shape": "circle",
-																																																																													"fill": "#22aa55",
+																																																																													"fill": "rgb(112, 0, 144)",
 																																																																													"r": 10
 																																																																												}
 																																																																											}
 																																																																										}
 																																																																									],
-																																																																									"portal_from": "104193093796409795"
+																																																																									"portal_from": "104193093796409795",
+																																																																									"color": "rgb(80, 224, 112)"
 																																																																								}
 																																																																							]
 																																																																						}
@@ -7235,20 +7238,22 @@
 																																																																							},
 																																																																							"children": [],
 																																																																							"portal": "104193167488910745",
+																																																																							"color": "rgb(192, 80, 224)",
 																																																																							"nodeSvgShape": {
 																																																																								"shapeProps": {
 																																																																									"shape": "circle",
-																																																																									"fill": "#22aa55",
+																																																																									"fill": "rgb(192, 80, 224)",
 																																																																									"r": 10
 																																																																								}
 																																																																							}
 																																																																						}
 																																																																					],
 																																																																					"portal": "103267026837174571",
+																																																																					"color": "rgb(80, 224, 112)",
 																																																																					"nodeSvgShape": {
 																																																																						"shapeProps": {
 																																																																							"shape": "circle",
-																																																																							"fill": "#22aa55",
+																																																																							"fill": "rgb(80, 224, 112)",
 																																																																							"r": 10
 																																																																						}
 																																																																					}
@@ -7257,10 +7262,11 @@
 																																																																		}
 																																																																	],
 																																																																	"portal": "103267026837174571",
+																																																																	"color": "rgb(80, 224, 112)",
 																																																																	"nodeSvgShape": {
 																																																																		"shapeProps": {
 																																																																			"shape": "circle",
-																																																																			"fill": "#22aa55",
+																																																																			"fill": "rgb(80, 224, 112)",
 																																																																			"r": 10
 																																																																		}
 																																																																	}
@@ -13356,7 +13362,8 @@
 																																																																																																							]
 																																																																																																						}
 																																																																																																					],
-																																																																																																					"portal_from": "103720055631375298"
+																																																																																																					"portal_from": "103720055631375298",
+																																																																																																					"color": "rgb(112, 0, 144)"
 																																																																																																				}
 																																																																																																			]
 																																																																																																		}
@@ -13373,7 +13380,8 @@
 																																																																																							]
 																																																																																						}
 																																																																																					],
-																																																																																					"portal_from": "103225594070355879"
+																																																																																					"portal_from": "103225594070355879",
+																																																																																					"color": "rgb(176, 64, 208)"
 																																																																																				},
 																																																																																				{
 																																																																																					"name": "103220925789267300",
@@ -14219,10 +14227,11 @@
 																																																																																															},
 																																																																																															"children": [],
 																																																																																															"portal": "103222193417681045",
+																																																																																															"color": "rgb(176, 64, 208)",
 																																																																																															"nodeSvgShape": {
 																																																																																																"shapeProps": {
 																																																																																																	"shape": "circle",
-																																																																																																	"fill": "#22aa55",
+																																																																																																	"fill": "rgb(176, 64, 208)",
 																																																																																																	"r": 10
 																																																																																																}
 																																																																																															}
