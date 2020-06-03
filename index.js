@@ -202,20 +202,26 @@ class Main extends Component{
 		document.addEventListener('keydown',(e)=>{
 
 			if(this.selected){
-				let len = this.selected.children ? this.selected.children.length : 0;
+				if(!this.selected.children) this.selected.children = [];
+				let len = this.selected.children.length;
+
 				switch(e.keyCode){
 					case 40 : //down
 					e.preventDefault();
-					if(len === 1){
-						this.selected = this.selected.children[0];
-					}else if(len === 2){
-						this.selected = this.selected.children[0];
-					}else if(len > 2){
-						this.selected = this.selected.children[len-2];
+
+					if(this.selected.portal){
+						let n = this.findNode(this.selected.portal);
+						let arr = [...this.selected.children];
+						if(n) arr.unshift(n);
+						let i = Math.round(Math.random()*(arr.length-1));
+						this.selected = arr[i];
 					}else{
-						if(this.selected.portal){
-							let n = this.findNode(this.selected.portal);
-							if(n) this.selected = n;
+						if(len === 1){
+							this.selected = this.selected.children[0];
+						}else if(len === 2){
+							this.selected = this.selected.children[0];
+						}else if(len > 2){
+							this.selected = this.selected.children[len-2];
 						}
 					}
 					this.changeNode(this.selected, true);
